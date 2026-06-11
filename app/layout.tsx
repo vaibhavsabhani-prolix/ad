@@ -32,10 +32,8 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
-        <meta
-          name="google-adsense-account"
-          content="ca-pub-1361802956304203"
-        />
+        <meta name="google-adsense-account" content="ca-pub-1361802956304203" />
+        <meta name="monetag" content="39b7d0d08844b5b2c2f129dc8737e7b2" />
 
         <script
           async
@@ -44,9 +42,7 @@ export default function RootLayout({
         />
       </head>
 
-      <body className="min-h-full flex flex-col">
-        {children}
-      </body>
+      <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
 }
