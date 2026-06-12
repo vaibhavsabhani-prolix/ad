@@ -20,17 +20,28 @@ interface AdsterraAdProps {
 
 export default function AdsterraAd(props: AdsterraAdProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const loaded = useRef(false);
 
   useEffect(() => {
+    if (loaded.current) return;
+
     if (props.type === "smartlink") return;
 
-    if (props.type === "socialBar" || props.type === "popunder") {
+    if (
+      props.type === "socialBar" ||
+      props.type === "popunder"
+    ) {
+      if (!props.scriptUrl) return;
+
       const script = document.createElement("script");
 
-      script.src = props.scriptUrl!;
+      script.src = props.scriptUrl;
       script.async = true;
+      script.setAttribute("data-cfasync", "false");
 
       document.body.appendChild(script);
+
+      loaded.current = true;
 
       return () => {
         script.remove();
@@ -38,29 +49,42 @@ export default function AdsterraAd(props: AdsterraAdProps) {
     }
 
     if (props.type === "native") {
+      if (!props.invokeUrl) return;
+
       const script = document.createElement("script");
 
-      script.src = props.invokeUrl!;
+      script.src = props.invokeUrl;
       script.async = true;
       script.setAttribute("data-cfasync", "false");
 
       document.body.appendChild(script);
+
+      loaded.current = true;
 
       return () => {
         script.remove();
       };
     }
 
-    if (props.type === "banner" && ref.current) {
+    if (props.type === "banner") {
+      if (
+        !ref.current ||
+        !props.adKey ||
+        !props.width ||
+        !props.height
+      ) {
+        return;
+      }
+
       const optionsScript = document.createElement("script");
 
       optionsScript.innerHTML = `
         atOptions = {
-          key: '${props.adKey}',
-          format: 'iframe',
-          height: ${props.height},
-          width: ${props.width},
-          params: {}
+          'key' : '${props.adKey}',
+          'format' : 'iframe',
+          'height' : ${props.height},
+          'width' : ${props.width},
+          'params' : {}
         };
       `;
 
@@ -68,15 +92,18 @@ export default function AdsterraAd(props: AdsterraAdProps) {
 
       invokeScript.src = `https://www.highperformanceformat.com/${props.adKey}/invoke.js`;
       invokeScript.async = true;
+      invokeScript.setAttribute("data-cfasync", "false");
 
       ref.current.appendChild(optionsScript);
       ref.current.appendChild(invokeScript);
+
+      loaded.current = true;
 
       return () => {
         ref.current?.replaceChildren();
       };
     }
-  }, [props]);
+  }, []);
 
   if (props.type === "smartlink") {
     return (
