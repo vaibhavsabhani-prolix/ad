@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import ReduxProvider from "./ReduxProvider";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,16 +34,31 @@ export default function RootLayout({
     >
       <head>
         <meta name="google-adsense-account" content="ca-pub-1361802956304203" />
-        <meta name="monetag" content="39b7d0d08844b5b2c2f129dc8737e7b2" />
+      </head>
 
-        <script
+      <body className="min-h-full flex flex-col">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-VHL8Y6LYN0"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VHL8Y6LYN0');
+    `}
+        </Script>
+
+        <Script
           async
+          strategy="afterInteractive"
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1361802956304203"
           crossOrigin="anonymous"
         />
-      </head>
-
-      <body className="min-h-full flex flex-col">{children} </body>
+        <ReduxProvider>{children}</ReduxProvider>
+      </body>
     </html>
   );
 }
