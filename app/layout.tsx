@@ -16,13 +16,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://codexd.in"),
   title: {
     default: "Ad Provider Manager",
     template: "%s | Ad Provider Manager",
   },
-  description: "Ad Provider Manager",
+  description:
+    "Manage and compare advertising providers including Google AdSense, Adsterra, Monetag and other ad networks from a single platform.",
 
-  keywords: ["Ad Provider", "Ad Manager", "Ad Publisher"],
+  keywords: [
+    "ad provider manager",
+    "google adsense",
+    "adsterra",
+    "monetag",
+    "ad management",
+    "publisher ads",
+    "advertising networks",
+  ],
 
   authors: [{ name: "Ad Provider Manager" }],
 
@@ -34,13 +44,13 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "https://www.codexd.in",
+    canonical: "https://codexd.in",
   },
 
   openGraph: {
     title: "Ad Provider Manager",
     description: "Ad Provider Manager",
-    url: "https://www.codexd.in",
+    url: "https://codexd.in",
     siteName: "Ad Provider Manager",
     locale: "en_US",
     type: "website",
@@ -75,8 +85,20 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "Ad Provider Manager",
-              url: "https://www.codexd.in",
-              logo: "https://www.codexd.in/logo.svg",
+              url: "https://codexd.in",
+              logo: "https://codexd.in/logo.svg",
+            }),
+          }}
+        />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Ad Provider Manager",
+              url: "https://codexd.in",
             }),
           }}
         />
