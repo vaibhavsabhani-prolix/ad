@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ReduxProvider from "./ReduxProvider";
 import Script from "next/script";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -57,7 +58,42 @@ export default function RootLayout({
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1361802956304203"
           crossOrigin="anonymous"
         />
-        <ReduxProvider>{children}</ReduxProvider>
+        <ReduxProvider>
+          <header className="w-full bg-white dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800">
+            <div className="max-w-7xl mx-auto px-4 py-3 flex items-center gap-6">
+              <Link href="/" className="font-semibold text-lg">
+                Home
+              </Link>
+              <nav className="flex items-center gap-4">
+                <Link
+                  href="/about"
+                  className="text-sm text-zinc-700 dark:text-zinc-300"
+                >
+                  About
+                </Link>
+                <Link
+                  href="/contact"
+                  className="text-sm text-zinc-700 dark:text-zinc-300"
+                >
+                  Contact
+                </Link>
+                <Link
+                  href="/privacy"
+                  className="text-sm text-zinc-700 dark:text-zinc-300"
+                >
+                  Privacy
+                </Link>
+                <Link
+                  href="/terms"
+                  className="text-sm text-zinc-700 dark:text-zinc-300"
+                >
+                  Terms
+                </Link>
+              </nav>
+            </div>
+          </header>
+          {children}
+        </ReduxProvider>
       </body>
     </html>
   );
