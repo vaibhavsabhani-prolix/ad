@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Site logo">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4F46E5"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="#ffffff"/>
+  <g transform="translate(0, -10)">
+    <circle cx="256" cy="180" r="120" fill="url(#grad)" />
+    <g transform="translate(256,180)">
+      <text x="0" y="14" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="96" font-weight="700" fill="#ffffff">Ad</text>
+    </g>
+    <text x="256" y="400" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="48" fill="#111827">AdConfig</text>
+  </g>
+</svg>
