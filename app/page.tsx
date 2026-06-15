@@ -1,6 +1,17 @@
+import { Metadata } from "next";
 import AdsterraAd from "./AdsterraAdProps";
 import GoogleAd from "./GoogleAd";
 import React from "react";
+import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Ad Provider Manager - Manage Multiple Ad Networks",
+  description:
+    "Ad Provider Manager centralizes multiple advertising networks (Google AdSense, Adsterra, and others) so publishers can manage placements, optimize revenue, and maintain policy compliance from one dashboard.",
+  alternates: {
+    canonical: "https://www.codexd.in",
+  },
+};
 
 const Paragraph = ({ children }: { children: React.ReactNode }) => (
   <p className="mb-4 text-zinc-700 dark:text-zinc-300 leading-relaxed">
@@ -8,32 +19,67 @@ const Paragraph = ({ children }: { children: React.ReactNode }) => (
   </p>
 );
 
-const makeLongArticle = () => {
-  return [
-    "Ad Provider Manager is a centralized platform that helps website owners manage multiple advertising networks from a single dashboard. Publishers can organize ad placements, monitor performance, and streamline monetization strategies without repeatedly modifying website code.",
+function makeLongContent() {
+  const parts: string[] = [];
 
-    "Modern publishers often work with several advertising providers including Google AdSense, Adsterra, Monetag, and other display advertising networks. Managing all of them efficiently can improve both user experience and advertising revenue.",
+  parts.push(
+    "Ad Provider Manager is a focused ad operations product built for publishers who run multiple ad networks across one or more sites. It centralizes configuration, placement management, and basic performance monitoring so you spend less time editing site templates and more time growing traffic and revenue.",
+  );
 
-    "Our platform allows publishers to create, organize, and manage ad placements across websites. By keeping advertising configurations centralized, website owners can save time and reduce implementation errors.",
+  parts.push(
+    "Why centralize? Publishers commonly blend ad providers — Google AdSense for programmatic inventory, Adsterra for direct buys and offers, and other networks for native or alternative demand. Each provider has unique tags, size requirements, and policy considerations. By keeping ad metadata and placement rules in a single system, Ad Provider Manager reduces repetitive work, minimizes implementation errors, and makes it faster to test new layouts or networks.",
+  );
 
-    "Google AdSense remains one of the most popular monetization solutions for content creators and publishers. Proper ad placement, responsive layouts, and policy-compliant implementations help maximize long-term revenue potential.",
+  parts.push(
+    "Supported networks include Google AdSense, Adsterra, and other major display and native providers. We focus on enabling responsive ad slots, conditional ad rotation, priority rules, and simple A/B rotation between networks so you can test what works best for your audience.",
+  );
 
-    "Adsterra provides additional monetization opportunities through banner advertisements, native ads, social bars, direct links, and popunder campaigns. Combining multiple advertising networks can help diversify revenue sources.",
+  parts.push(
+    "Core benefits for publishers include: centralized placement management, improved policy compliance, faster rollout of ad experiments, and simplified bookkeeping for ad units across multiple properties. The interface is designed for typical publishing stacks and content management systems, offering copy-and-paste snippets and hosting-friendly deployment options.",
+  );
 
-    "Website monetization should always prioritize user experience. Excessive advertisements can negatively affect engagement, while strategically placed ads can generate revenue without disrupting visitors.",
+  parts.push(
+    "Ad Provider Manager supports both programmatic and direct-sale workflows. For programmatic demand (e.g., Google AdSense), it provides a compliant, responsive slot configuration and guidance for page-level and site-level policies. For direct campaigns or networks like Adsterra, it supports banner, native, and optional social bars while flagging formats that can conflict with policy-driven networks.",
+  );
 
-    "Search engine optimization and advertising performance often work together. Fast-loading websites, mobile-friendly layouts, and valuable content help improve both organic visibility and advertising results.",
+  parts.push(
+    "Revenue optimization is approached via simple rules: define priority for networks, set frequency caps, and rotate creatives when a network underperforms. Publishers can assign default placements (header, inline, sidebar, footer) and override them per-site or per-path. That way, you can test an inline mobile leaderboard on article pages while keeping a different layout on landing pages.",
+  );
 
-    "Publishers should regularly review ad placements, monitor website performance metrics, and test different advertising formats to identify the most effective monetization strategy for their audience.",
+  parts.push(
+    "We prioritize user experience and policy compliance. Excessive ad density hurts engagement and can trigger policy flags from networks like Google AdSense. Ad Provider Manager includes recommended defaults (single above-the-fold slot on mobile, limited sticky creatives, clear content-to-ad ratios) to help sites remain compliant and maintain healthy user metrics.",
+  );
 
-    "A centralized ad management system simplifies scaling. Whether managing a single blog or multiple websites, organized advertising operations make growth easier and more sustainable.",
+  parts.push(
+    "Typical publisher use cases: single-site bloggers needing unified ad control; multi-site networks looking to standardize placements; agencies managing direct campaigns for clients; and developers who want production-ready snippets that can be toggled without a full deploy.",
+  );
 
-    "Ad Provider Manager is designed to help publishers focus on creating quality content while maintaining efficient control over advertising providers, placements, and monetization strategies.",
-  ];
-};
+  parts.push(
+    "Ad placement management includes naming conventions for slots, responsive size maps, and fallback behavior. If a primary network does not fill an impression within a configurable timeout, the system can fall back to a secondary provider, helping maintain fill rate while protecting revenue.",
+  );
+
+  parts.push(
+    "Privacy and data: we surface guidance for cookie usage, consent banners, and how to configure Google Analytics and AdSense to respect user choices. Our privacy-aware defaults and documentation help you reduce friction during ad network reviews and approvals. See our Privacy Policy for details and specifics about analytics and advertising cookies.",
+  );
+
+  parts.push(
+    "Implementation is lightweight: drop the provider snippets provided by the dashboard into your templates or use our hosted snippet. We intentionally avoid heavy client-side frameworks in the ad path to preserve page load speed and SEO.",
+  );
+
+  parts.push(
+    "Roadmap: richer performance dashboards, server-side bidding adapters, and first-party data controls to help publishers retain more insights while adhering to privacy constraints. We plan to add deeper analytics integrations and a marketplace for vetted direct advertisers.",
+  );
+
+  parts.push(
+    "If you want to learn more about how Ad Provider Manager can fit into your stack, visit the About page to read more about our approach, or reach out on the Contact page for business inquiries and support.",
+  );
+
+  // Join into paragraphs
+  return parts;
+}
 
 export default function Home() {
-  const paragraphs = React.useMemo(() => makeLongArticle(), []);
+  const paragraphs = React.useMemo(() => makeLongContent(), []);
 
   return (
     <div className="min-h-screen w-full bg-zinc-50 dark:bg-black font-sans">
@@ -42,7 +88,33 @@ export default function Home() {
           {/* Left Sidebar */}
           <aside className="w-full lg:w-72 shrink-0">
             <div className="sticky top-6">
-              <h3 className="mb-4 font-semibold">Left Sidebar</h3>
+              <h3 className="mb-4 font-semibold">Resources</h3>
+              <nav className="mb-6 flex flex-col gap-2">
+                <Link
+                  href="/about"
+                  className="text-sm text-zinc-700 dark:text-zinc-300"
+                >
+                  About
+                </Link>
+                <Link
+                  href="/contact"
+                  className="text-sm text-zinc-700 dark:text-zinc-300"
+                >
+                  Contact
+                </Link>
+                <Link
+                  href="/privacy"
+                  className="text-sm text-zinc-700 dark:text-zinc-300"
+                >
+                  Privacy
+                </Link>
+                <Link
+                  href="/terms"
+                  className="text-sm text-zinc-700 dark:text-zinc-300"
+                >
+                  Terms
+                </Link>
+              </nav>
               <div className="mb-6 flex justify-center">
                 <AdsterraAd
                   type="banner"
@@ -57,71 +129,78 @@ export default function Home() {
           {/* Main Content */}
           <main className="flex-1">
             <article className="bg-white dark:bg-zinc-900 rounded-lg shadow p-6">
-              <h1 className="text-3xl font-bold mb-2">
-                Ad Provider Manager – Manage Multiple Ad Networks from One
-                Dashboard
-              </h1>
+              <h1 className="text-3xl font-bold mb-2">Ad Provider Manager</h1>
 
               <div className="mb-4 text-sm text-zinc-500">
                 By Ad Provider Manager Team · June 2026
               </div>
 
-              {/* Top Google Ad */}
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                  __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "BreadcrumbList",
+                    itemListElement: [
+                      {
+                        "@type": "ListItem",
+                        position: 1,
+                        name: "Home",
+                        item: "https://www.codexd.in",
+                      },
+                    ],
+                  }),
+                }}
+              />
 
-              <p className="text-center">Google Ad</p>
               <div className="mb-6 flex justify-center">
                 <GoogleAd adSlot="9716108451" />
               </div>
-              <AdsterraAd
-                type="socialBar"
-                scriptUrl="https://pl29719861.effectivecpmnetwork.com/9f/72/f3/9f72f3a6ec53badbb0ed3a07292e6a36.js"
-              />
-              <AdsterraAd
-                type="popunder"
-                scriptUrl="https://pl29719921.effectivecpmnetwork.com/50/25/5f/50255fb46b688e22cd795c27557df781.js"
-              />
-              <AdsterraAd
-                type="smartlink"
-                smartLink="https://www.effectivecpmnetwork.com/qeszqgch20?key=ff7d33ba148511d3e048318ad07adab6"
-              >
-                Open Offer
-              </AdsterraAd>
-              {/* Article body */}
+
               <div className="prose dark:prose-invert max-w-none">
                 {paragraphs.map((p, i) => (
                   <Paragraph key={i}>{p}</Paragraph>
                 ))}
 
-                <h2 className="mt-6">Supported Advertising Networks</h2>
+                <h2 className="mt-8">Supported Advertising Networks</h2>
 
                 <Paragraph>
-                  Ad Provider Manager supports multiple advertising providers
-                  including Google AdSense, Adsterra, and other display
-                  advertising platforms. Publishers can organize ad units and
-                  placements from a single interface.
+                  We provide streamlined support for Google AdSense and
+                  Adsterra, plus tooling to integrate other display and native
+                  networks. Each provider is documented with recommended slot
+                  sizes, mobile-first guidelines, and policy notes to help you
+                  maintain compliance.
                 </Paragraph>
 
-                <h3 className="mt-4">Benefits for Publishers</h3>
+                <h2 className="mt-8">
+                  Publisher Use Cases & Revenue Optimization
+                </h2>
 
                 <Paragraph>
-                  Centralized ad management helps reduce configuration errors,
-                  improve website organization, and simplify monetization
-                  workflows. Publishers can focus on creating quality content
-                  while efficiently managing advertising operations.
+                  Whether you run a single blog or manage a network of sites,
+                  the platform helps standardize naming, rotate creatives, and
+                  set priority/fallback rules so you can measure which
+                  placements and providers drive the most revenue.
+                </Paragraph>
+
+                <h2 className="mt-8">Frequently Asked Questions</h2>
+                <h3>How does Ad Provider Manager affect SEO?</h3>
+                <Paragraph>
+                  We keep ad snippets lightweight and defer non-essential
+                  network calls to avoid blocking rendering. Use our recommended
+                  defaults to preserve page speed — a critical SEO factor.
+                </Paragraph>
+
+                <h3>Is this compatible with Google AdSense?</h3>
+                <Paragraph>
+                  Yes. We provide AdSense-friendly configurations and guidance.
+                  For approval, avoid excessive ads, popunders, or deceptive
+                  placements. See our Privacy page for details on analytics and
+                  consent.
                 </Paragraph>
               </div>
 
-              {/* After-content Adsterra ads */}
               <div className="mt-8 space-y-6">
-                <div className="flex justify-center">
-                  <AdsterraAd
-                    type="banner"
-                    adKey="5e133825f54eeadfbb8f48674b5082f9"
-                    width={728}
-                    height={90}
-                  />
-                </div>
-
                 <div className="flex justify-center">
                   <AdsterraAd
                     type="native"
@@ -136,7 +215,7 @@ export default function Home() {
           {/* Right Sidebar */}
           <aside className="w-full lg:w-72 shrink-0">
             <div className="sticky top-6">
-              <h3 className="mb-4 font-semibold">Right Sidebar</h3>
+              <h3 className="mb-4 font-semibold">Quick Links</h3>
               <div className="mb-6 flex justify-center">
                 <AdsterraAd
                   type="banner"
@@ -152,143 +231,3 @@ export default function Home() {
     </div>
   );
 }
-
-// "use client";
-
-// import React from "react";
-// import { useGetAdPlacementsQuery } from "@/store/action/ad";
-// import AdsterraAd from "./AdsterraAdProps";
-// import GoogleAd from "./GoogleAd";
-
-// export default function Home() {
-//   const { data = [] } = useGetAdPlacementsQuery();
-
-//   const CONTENT = data.filter((p: any) => p.placement?.name === "CONTENT");
-//   const LEFT_SIDEBAR = data.filter(
-//     (p: any) => p.placement?.name === "LEFT_SIDEBAR",
-//   );
-
-//   const RIGHT_SIDEBAR = data.filter(
-//     (p: any) => p.placement?.name === "RIGHT_SIDEBAR",
-//   );
-
-//   const renderPlacement = (item: any) => {
-//     if (!item || !item.adUnit) return null;
-
-//     const providerName = item.adUnit.provider?.name;
-//     const cfg = item.adUnit.config || {};
-//     const width = cfg.width ?? item.width;
-//     const height = cfg.height ?? item.height;
-//     const style: React.CSSProperties = {};
-//     if (width) style.width = typeof width === "number" ? `${width}px` : width;
-//     if (height)
-//       style.height = typeof height === "number" ? `${height}px` : height;
-
-//     if (providerName === "Adsterra") {
-//       if (cfg.type === "native") {
-//         return (
-//           <div
-//             key={item.id}
-//             style={style}
-//             className="flex justify-center items-start"
-//           >
-//             <AdsterraAd
-//               type="native"
-//               invokeUrl={cfg.invokeUrl}
-//               containerId={cfg.containerId}
-//             />
-//           </div>
-//         );
-//       }
-//       if (cfg.type === "banner") {
-//         const adKey = cfg.adKey || cfg.key || item.adUnit.id;
-//         const w = cfg.width ?? item.width;
-//         const h = cfg.height ?? item.height;
-//         console.log(adKey)
-//         return (
-//           <div
-//             key={item.id}
-//             style={style}
-//             className="flex justify-center items-start"
-//           >
-//             <AdsterraAd type="banner" adKey={adKey} width={w} height={h} />
-//           </div>
-//         );
-//       }
-
-//       return (
-//         <div
-//           key={item.id}
-//           style={style}
-//           className="flex justify-center items-start"
-//         >
-//           <AdsterraAd
-//             type="native"
-//             invokeUrl={cfg.invokeUrl}
-//             containerId={cfg.containerId}
-//           />
-//         </div>
-//       );
-//     }
-
-//     if (
-//       providerName === "Google Adsense" ||
-//       providerName === "Google AdSense"
-//     ) {
-//       const slot =
-//         cfg.adUnitId || cfg.adSlot || item.adUnitId || String(item.adUnitId);
-//       return (
-//         <div
-//           key={item.id}
-//           style={style}
-//           className="flex justify-center items-start"
-//         >
-//           <GoogleAd adSlot={slot} style={style} />
-//         </div>
-//       );
-//     }
-
-//     return null;
-//   };
-
-//   return (
-//     <div className="min-h-screen w-full bg-zinc-50 dark:bg-black font-sans">
-//       <div className=" mx-auto grid items-start gap-6 p-6">
-//         <aside className="col-start-1">
-//           <div className="sticky top-6">
-//             <h3 className="mb-2 font-semibold">Left Sidebar</h3>
-//             {LEFT_SIDEBAR.length > 0 ? (
-//               LEFT_SIDEBAR.map(renderPlacement)
-//             ) : (
-//               <div>No left ad</div>
-//             )}
-//           </div>
-//         </aside>
-
-//         <main className="col-start-2">
-//           <h1 className="mb-4 text-xl font-bold">Main Content</h1>
-
-//           <section className="mb-6">
-//             <h2 className="mb-2">CONTENT Placement</h2>
-//             {CONTENT.length > 0 ? (
-//               CONTENT.map(renderPlacement)
-//             ) : (
-//               <div>No content ad</div>
-//             )}
-//           </section>
-//         </main>
-
-//         <aside className="col-start-3">
-//           <div className="sticky top-6">
-//             <h3 className="mb-2 font-semibold">Right Sidebar</h3>
-//             {RIGHT_SIDEBAR.length > 0 ? (
-//               RIGHT_SIDEBAR.map(renderPlacement)
-//             ) : (
-//               <div>No right ad</div>
-//             )}
-//           </div>
-//         </aside>
-//       </div>
-//     </div>
-//   );
-// }

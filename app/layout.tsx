@@ -15,14 +15,19 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const SITE_URL = "https://www.codexd.in";
+const TITLE = "Ad Provider Manager";
+const DESCRIPTION =
+  "Manage advertising providers including Google AdSense, Adsterra and other ad networks from a single platform.";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.codexd.in"),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Ad Provider Manager - Manage Ad Providers",
+    default: `${TITLE} - Manage Ad Providers`,
     template: "%s | Ad Provider Manager",
   },
-  description:
-    "Manage advertising providers including Google AdSense, Adsterra and other ad networks from a single platform.",
+  description: DESCRIPTION,
+  category: "technology",
 
   keywords: [
     "ad provider manager",
@@ -44,23 +49,20 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "https://www.codexd.in",
+    canonical: SITE_URL,
   },
 
-  // for the social media (when you share the link of website on social media then it would show this opengraph data there)
-
   openGraph: {
-    title: "Ad Provider Manager",
-    description:
-      "Manage advertising providers including Google AdSense, Adsterra and other ad networks from a single platform.",
-    url: "https://www.codexd.in",
-    siteName: "Ad Provider Manager",
+    title: TITLE,
+    description: DESCRIPTION,
+    url: SITE_URL,
+    siteName: TITLE,
     images: [
       {
-        url: "https://www.codexd.in/logo.png",
+        url: `${SITE_URL}/logo.png`,
         width: 1200,
         height: 630,
-        alt: "Ad Provider Manager",
+        alt: TITLE,
       },
     ],
     locale: "en_US",
@@ -69,10 +71,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Ad Provider Manager",
-    description:
-      "Manage advertising providers including Google AdSense, Adsterra and other ad networks from a single platform.",
-    images: ["https://www.codexd.in/logo.png"],
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [`${SITE_URL}/logo.png`],
   },
 
   other: {
@@ -97,9 +98,29 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "Ad Provider Manager",
-              url: "https://www.codexd.in",
-              logo: "https://www.codexd.in/logo.png",
+              name: TITLE,
+              url: SITE_URL,
+              logo: `${SITE_URL}/logo.png`,
+            }),
+          }}
+        />
+
+        {/* WebSite structured data (enhanced) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: TITLE,
+              url: SITE_URL,
+              description: DESCRIPTION,
+              inLanguage: "en",
+              author: {
+                "@type": "Organization",
+                name: TITLE,
+                url: SITE_URL,
+              },
             }),
           }}
         />
@@ -109,12 +130,25 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "WebSite",
-              name: "Ad Provider Manager",
-              url: "https://www.codexd.in",
+              "@type": "WebPage",
+              name: TITLE,
+              url: SITE_URL,
+              description: DESCRIPTION,
+              inLanguage: "en",
+              isPartOf: {
+                "@type": "WebSite",
+                name: TITLE,
+                url: SITE_URL,
+              },
+              publisher: {
+                "@type": "Organization",
+                name: TITLE,
+                url: SITE_URL,
+              },
             }),
           }}
         />
+
         <meta name="google-adsense-account" content="ca-pub-1361802956304203" />
         <link rel="icon" href="/favicon.svg" />
         <link rel="shortcut icon" href="/favicon.svg" />
