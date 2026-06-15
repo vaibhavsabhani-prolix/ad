@@ -1,20 +1,10 @@
-// app/sitemap.ts
-
 import { MetadataRoute } from "next";
 
+const routes = ["", "/about", "/contact", "/privacy", "/terms"];
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: "https://codexd.in",
-      lastModified: new Date(),
-    },
-    {
-      url: "https://codexd.in/about",
-      lastModified: new Date(),
-    },
-    {
-      url: "https://codexd.in/contact",
-      lastModified: new Date(),
-    },
-  ];
+  return routes.map((route) => ({
+    url: `https://codexd.in${route}`,
+    lastModified: new Date(),
+  }));
 }

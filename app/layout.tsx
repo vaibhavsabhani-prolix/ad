@@ -18,11 +18,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://codexd.in"),
   title: {
-    default: "Ad Provider Manager",
+    default: "Ad Provider Manager - Manage Ad Providers",
     template: "%s | Ad Provider Manager",
   },
   description:
-    "Manage and compare advertising providers including Google AdSense, Adsterra, Monetag and other ad networks from a single platform.",
+    "Manage advertising providers including Google AdSense, Adsterra and other ad networks from a single platform.",
 
   keywords: [
     "ad provider manager",
@@ -47,11 +47,22 @@ export const metadata: Metadata = {
     canonical: "https://codexd.in",
   },
 
+  // for the social media (when you share the link of website on social media then it would show this opengraph data there)
+
   openGraph: {
     title: "Ad Provider Manager",
-    description: "Ad Provider Manager",
+    description:
+      "Manage advertising providers including Google AdSense, Adsterra and other ad networks from a single platform.",
     url: "https://codexd.in",
     siteName: "Ad Provider Manager",
+    images: [
+      {
+        url: "https://codexd.in/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Ad Provider Manager",
+      },
+    ],
     locale: "en_US",
     type: "website",
   },
@@ -59,7 +70,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Ad Provider Manager",
-    description: "Ad Provider Manager",
+    description:
+      "Manage advertising providers including Google AdSense, Adsterra and other ad networks from a single platform.",
+    images: ["https://codexd.in/logo.png"],
   },
 
   other: {
@@ -86,7 +99,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "Ad Provider Manager",
               url: "https://codexd.in",
-              logo: "https://codexd.in/logo.svg",
+              logo: "https://codexd.in/logo.png",
             }),
           }}
         />

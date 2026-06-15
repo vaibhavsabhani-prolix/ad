@@ -1,6 +1,15 @@
-import React from "react";
 import AdsterraAd from "../../app/AdsterraAdProps";
 import GoogleAd from "../../app/GoogleAd";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms & Conditions",
+  description:
+    "Review the Terms and Conditions for using Ad Provider Manager and its services.",
+  alternates: {
+    canonical: "https://codexd.in/terms",
+  },
+};
 
 export default function TermsPage() {
   return (

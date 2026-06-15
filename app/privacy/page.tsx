@@ -1,6 +1,16 @@
 import React from "react";
 import AdsterraAd from "../../app/AdsterraAdProps";
 import GoogleAd from "../../app/GoogleAd";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description:
+    "Read the Privacy Policy of Ad Provider Manager to understand how user information is collected, stored, and protected.",
+  alternates: {
+    canonical: "https://codexd.in/privacy",
+  },
+};
 
 export default function PrivacyPage() {
   return (

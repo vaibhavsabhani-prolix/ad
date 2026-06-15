@@ -1,6 +1,16 @@
 import React from "react";
 import AdsterraAd from "../../app/AdsterraAdProps";
 import GoogleAd from "../../app/GoogleAd";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description:
+    "Contact Ad Provider Manager for support, questions, feedback, or business inquiries.",
+  alternates: {
+    canonical: "https://codexd.in/contact",
+  },
+};
 
 const Paragraph = ({ children }: { children: React.ReactNode }) => (
   <p className="mb-4 text-zinc-700 dark:text-zinc-300">{children}</p>
