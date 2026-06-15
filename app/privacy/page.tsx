@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Read the Privacy Policy of Ad Provider Manager to understand how user information is collected, stored, and protected.",
   alternates: {
-    canonical: "https://codexd.in/privacy",
+    canonical: "https://www.codexd.in/privacy",
   },
 };
 

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Learn more about Ad Provider Manager, our platform, and how we help publishers manage advertising providers.",
   alternates: {
-    canonical: "https://codexd.in/about",
+    canonical: "https://www.codexd.in/about",
   },
 };
 

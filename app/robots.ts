@@ -10,6 +10,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://codexd.in/sitemap.xml",
+    sitemap: "https://www.codexd.in/sitemap.xml",
   };
 }

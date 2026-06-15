@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Review the Terms and Conditions for using Ad Provider Manager and its services.",
   alternates: {
-    canonical: "https://codexd.in/terms",
+    canonical: "https://www.codexd.in/terms",
   },
 };
 

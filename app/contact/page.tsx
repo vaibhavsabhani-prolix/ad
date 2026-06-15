@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Contact Ad Provider Manager for support, questions, feedback, or business inquiries.",
   alternates: {
-    canonical: "https://codexd.in/contact",
+    canonical: "https://www.codexd.in/contact",
   },
 };
 

@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://codexd.in"),
+  metadataBase: new URL("https://www.codexd.in"),
   title: {
     default: "Ad Provider Manager - Manage Ad Providers",
     template: "%s | Ad Provider Manager",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "https://codexd.in",
+    canonical: "https://www.codexd.in",
   },
 
   // for the social media (when you share the link of website on social media then it would show this opengraph data there)
@@ -53,11 +53,11 @@ export const metadata: Metadata = {
     title: "Ad Provider Manager",
     description:
       "Manage advertising providers including Google AdSense, Adsterra and other ad networks from a single platform.",
-    url: "https://codexd.in",
+    url: "https://www.codexd.in",
     siteName: "Ad Provider Manager",
     images: [
       {
-        url: "https://codexd.in/logo.png",
+        url: "https://www.codexd.in/logo.png",
         width: 1200,
         height: 630,
         alt: "Ad Provider Manager",
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     title: "Ad Provider Manager",
     description:
       "Manage advertising providers including Google AdSense, Adsterra and other ad networks from a single platform.",
-    images: ["https://codexd.in/logo.png"],
+    images: ["https://www.codexd.in/logo.png"],
   },
 
   other: {
@@ -98,8 +98,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "Ad Provider Manager",
-              url: "https://codexd.in",
-              logo: "https://codexd.in/logo.png",
+              url: "https://www.codexd.in",
+              logo: "https://www.codexd.in/logo.png",
             }),
           }}
         />
@@ -111,7 +111,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebSite",
               name: "Ad Provider Manager",
-              url: "https://codexd.in",
+              url: "https://www.codexd.in",
             }),
           }}
         />
