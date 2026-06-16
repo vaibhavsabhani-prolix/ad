@@ -5,11 +5,28 @@ import React from "react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Ad Provider Manager - Manage Multiple Ad Networks",
+  title: "Manage Google AdSense, Adsterra & Ad Networks | Ad Provider Manager",
+
   description:
     "Ad Provider Manager centralizes multiple advertising networks (Google AdSense, Adsterra, and others) so publishers can manage placements, optimize revenue, and maintain policy compliance from one dashboard.",
+
   alternates: {
     canonical: "https://www.codexd.in",
+  },
+
+  openGraph: {
+    title: "Manage Google AdSense, Adsterra & Multiple Ad Networks",
+    description:
+      "Centralized platform for managing multiple advertising providers.",
+    url: "https://www.codexd.in",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Manage Google AdSense, Adsterra & Multiple Ad Networks",
+    description:
+      "Centralized platform for managing multiple advertising providers.",
   },
 };
 
@@ -132,7 +149,7 @@ export default function Home() {
               <h1 className="text-3xl font-bold mb-2">Ad Provider Manager</h1>
 
               <div className="mb-4 text-sm text-zinc-500">
-                By Ad Provider Manager Team · June 2026
+                Official Ad Provider Manager Platform
               </div>
 
               <script
@@ -152,7 +169,33 @@ export default function Home() {
                   }),
                 }}
               />
-
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                  __html: JSON.stringify({
+                    "@context": "https://schema.org",
+                    "@type": "FAQPage",
+                    mainEntity: [
+                      {
+                        "@type": "Question",
+                        name: "How does Ad Provider Manager affect SEO?",
+                        acceptedAnswer: {
+                          "@type": "Answer",
+                          text: "We keep ad snippets lightweight and defer non-essential network calls to avoid blocking rendering. Use our recommended defaults to preserve page speed.",
+                        },
+                      },
+                      {
+                        "@type": "Question",
+                        name: "Is this compatible with Google AdSense?",
+                        acceptedAnswer: {
+                          "@type": "Answer",
+                          text: "Yes. We provide AdSense-friendly configurations and guidance. Avoid excessive ads, popunders, or deceptive placements.",
+                        },
+                      },
+                    ],
+                  }),
+                }}
+              />
               <div className="mb-6 flex justify-center">
                 <GoogleAd adSlot="9716108451" />
               </div>

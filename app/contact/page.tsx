@@ -11,6 +11,20 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.codexd.in/contact",
   },
+  openGraph: {
+    title: "Contact Ad Provider Manager",
+    description:
+      "Contact the Ad Provider Manager team for support, business inquiries, and partnerships.",
+    url: "https://www.codexd.in/contact",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Ad Provider Manager",
+    description:
+      "Contact the Ad Provider Manager team for support, business inquiries, and partnerships.",
+  },
 };
 
 const Paragraph = ({ children }: { children: React.ReactNode }) => (
@@ -44,6 +58,25 @@ export default function ContactPage() {
                 item: "https://www.codexd.in/contact",
               },
             ],
+          }),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            name: "Contact Ad Provider Manager",
+            url: "https://www.codexd.in/contact",
+            description:
+              "Contact Ad Provider Manager for support, business inquiries, and partnerships.",
+            isPartOf: {
+              "@type": "WebSite",
+              name: "Ad Provider Manager",
+              url: "https://www.codexd.in",
+            },
           }),
         }}
       />

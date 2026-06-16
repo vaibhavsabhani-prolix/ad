@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ReduxProvider from "./ReduxProvider";
@@ -29,6 +29,8 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   category: "technology",
 
+  applicationName: TITLE,
+
   keywords: [
     "ad provider manager",
     "google adsense",
@@ -39,13 +41,29 @@ export const metadata: Metadata = {
     "advertising networks",
   ],
 
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/apple-touch-icon.svg",
+  },
+
   authors: [{ name: "Ad Provider Manager" }],
+
+  publisher: "Ad Provider Manager",
 
   creator: "Ad Provider Manager",
 
   robots: {
     index: true,
     follow: true,
+
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
 
   alternates: {
@@ -76,9 +94,17 @@ export const metadata: Metadata = {
     images: [`${SITE_URL}/logo.png`],
   },
 
+  referrer: "origin-when-cross-origin",
+
   other: {
     "google-adsense-account": "ca-pub-1361802956304203",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#ffffff",
 };
 
 export default function RootLayout({
@@ -101,6 +127,7 @@ export default function RootLayout({
               name: TITLE,
               url: SITE_URL,
               logo: `${SITE_URL}/logo.png`,
+              description: DESCRIPTION,
             }),
           }}
         />
@@ -125,34 +152,7 @@ export default function RootLayout({
           }}
         />
 
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebPage",
-              name: TITLE,
-              url: SITE_URL,
-              description: DESCRIPTION,
-              inLanguage: "en",
-              isPartOf: {
-                "@type": "WebSite",
-                name: TITLE,
-                url: SITE_URL,
-              },
-              publisher: {
-                "@type": "Organization",
-                name: TITLE,
-                url: SITE_URL,
-              },
-            }),
-          }}
-        />
-
         <meta name="google-adsense-account" content="ca-pub-1361802956304203" />
-        <link rel="icon" href="/favicon.svg" />
-        <link rel="shortcut icon" href="/favicon.svg" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.svg" />
       </head>
 
       <body className="min-h-full flex flex-col">
@@ -183,6 +183,12 @@ export default function RootLayout({
                 Home
               </Link>
               <nav className="flex items-center gap-4">
+                <Link
+                  href="/provider"
+                  className="text-sm text-zinc-700 dark:text-zinc-300"
+                >
+                  Providers
+                </Link>
                 <Link
                   href="/about"
                   className="text-sm text-zinc-700 dark:text-zinc-300"

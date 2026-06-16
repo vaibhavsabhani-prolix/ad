@@ -6,10 +6,27 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "About Us",
+
   description:
     "About Ad Provider Manager — what we build, why we built it, supported networks, and how publishers benefit from centralized ad management.",
+
   alternates: {
     canonical: "https://www.codexd.in/about",
+  },
+
+  openGraph: {
+    title: "About Ad Provider Manager",
+    description:
+      "Learn about Ad Provider Manager and how we help publishers manage multiple advertising networks.",
+    url: "https://www.codexd.in/about",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "About Ad Provider Manager",
+    description:
+      "Learn about Ad Provider Manager and how we help publishers manage multiple advertising networks.",
   },
 };
 
@@ -22,8 +39,7 @@ const Paragraph = ({ children }: { children: React.ReactNode }) => (
 export default function AboutPage() {
   return (
     <div className="min-h-screen p-6 max-w-4xl mx-auto">
-      <h1 className="text-2xl font-bold mb-4">About Us</h1>
-
+      <h1 className="text-2xl font-bold mb-4">About Ad Provider Manager</h1>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -44,6 +60,25 @@ export default function AboutPage() {
                 item: "https://www.codexd.in/about",
               },
             ],
+          }),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            name: "About Ad Provider Manager",
+            url: "https://www.codexd.in/about",
+            description:
+              "Learn about Ad Provider Manager and how it helps publishers manage multiple advertising networks.",
+            isPartOf: {
+              "@type": "WebSite",
+              name: "Ad Provider Manager",
+              url: "https://www.codexd.in",
+            },
           }),
         }}
       />

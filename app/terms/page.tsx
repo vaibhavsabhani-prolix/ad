@@ -10,6 +10,20 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.codexd.in/terms",
   },
+  openGraph: {
+    title: "Terms & Conditions",
+    description:
+      "Terms and Conditions for using Ad Provider Manager, including service use, liability, and publisher responsibilities.",
+    url: "https://www.codexd.in/terms",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms & Conditions",
+    description:
+      "Terms and Conditions for using Ad Provider Manager, including service use, liability, and publisher responsibilities.",
+  },
 };
 
 export default function TermsPage() {
@@ -41,6 +55,23 @@ export default function TermsPage() {
         }}
       />
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: "Terms & Conditions",
+            url: "https://www.codexd.in/terms",
+            description: "Terms and Conditions for using Ad Provider Manager.",
+            isPartOf: {
+              "@type": "WebSite",
+              name: "Ad Provider Manager",
+              url: "https://www.codexd.in",
+            },
+          }),
+        }}
+      />
       <div className="mb-6">
         <GoogleAd adSlot="9716108451" />
       </div>

@@ -1,4 +1,3 @@
-import React from "react";
 import AdsterraAd from "../../app/AdsterraAdProps";
 import GoogleAd from "../../app/GoogleAd";
 import type { Metadata } from "next";
@@ -10,6 +9,19 @@ export const metadata: Metadata = {
     "Privacy Policy for Ad Provider Manager explaining data collection, cookies, Google AdSense, Google Analytics, Adsterra and third-party advertising practices.",
   alternates: {
     canonical: "https://www.codexd.in/privacy",
+  },
+  openGraph: {
+    title: "Privacy Policy",
+    description:
+      "Privacy Policy for Ad Provider Manager explaining data collection, cookies, Google AdSense, Google Analytics, Adsterra and third-party advertising practices.",
+    url: "https://www.codexd.in/privacy",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy",
+    description:
+      "Privacy Policy for Ad Provider Manager explaining data collection, cookies, Google AdSense, Google Analytics, Adsterra and third-party advertising practices.",
   },
 };
 
@@ -38,6 +50,25 @@ export default function PrivacyPage() {
                 item: "https://www.codexd.in/privacy",
               },
             ],
+          }),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            name: "Privacy Policy",
+            url: "https://www.codexd.in/privacy",
+            description:
+              "Privacy Policy for Ad Provider Manager explaining data collection, cookies, Google AdSense, Google Analytics, Adsterra and third-party advertising practices.",
+            isPartOf: {
+              "@type": "WebSite",
+              name: "Ad Provider Manager",
+              url: "https://www.codexd.in",
+            },
           }),
         }}
       />
