@@ -4,6 +4,7 @@ import "./globals.css";
 import ReduxProvider from "./ReduxProvider";
 import Script from "next/script";
 import Link from "next/link";
+import AdsterraAd from "./AdsterraAdProps";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -217,6 +218,10 @@ export default function RootLayout({
             </div>
           </header>
           {children}
+          <AdsterraAd
+            type="socialBar"
+            scriptUrl="https://pl29719861.effectivecpmnetwork.com/9f/72/f3/9f72f3a6ec53badbb0ed3a07292e6a36.js"
+          />
         </ReduxProvider>
       </body>
     </html>
