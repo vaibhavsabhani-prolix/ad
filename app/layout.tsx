@@ -5,6 +5,7 @@ import ReduxProvider from "./ReduxProvider";
 import Script from "next/script";
 import Link from "next/link";
 import AdsterraAd from "./AdsterraAdProps";
+import Footer from "./components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,30 +17,29 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const SITE_URL = "https://www.codexd.in";
-const TITLE = "Ad Provider Manager";
+const SITE_URL = "https://codexd.in";
+const TITLE = "Visha Chips";
 const DESCRIPTION =
-  "Manage advertising providers including Google AdSense, Adsterra and other ad networks from a single platform.";
+  "Visha Chips — crispy, delicious potato chips made with natural ingredients. Available in multiple flavors and pack sizes for every occasion.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${TITLE} - Manage Ad Providers`,
-    template: "%s | Ad Provider Manager",
+    default: `${TITLE} - Crispy Potato Chips`,
+    template: "%s | Visha Chips",
   },
   description: DESCRIPTION,
-  category: "technology",
+  category: "food",
 
   applicationName: TITLE,
 
   keywords: [
-    "ad provider manager",
-    "google adsense",
-    "adsterra",
-    "monetag",
-    "ad management",
-    "publisher ads",
-    "advertising networks",
+    "visha chips",
+    "potato chips",
+    "snacks",
+    "crispy chips",
+    "flavors",
+    "snack food",
   ],
 
   icons: {
@@ -48,11 +48,11 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.svg",
   },
 
-  authors: [{ name: "Ad Provider Manager" }],
+  authors: [{ name: "Visha Chips" }],
 
-  publisher: "Ad Provider Manager",
+  publisher: "Visha Chips",
 
-  creator: "Ad Provider Manager",
+  creator: "Visha Chips",
 
   robots: {
     index: true,
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     siteName: TITLE,
     images: [
       {
-        url: `${SITE_URL}/logo.png`,
+        url: `${SITE_URL}/visha-logo.svg`,
         width: 1200,
         height: 630,
         alt: TITLE,
@@ -92,7 +92,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
-    images: [`${SITE_URL}/logo.png`],
+    images: [`${SITE_URL}/visha-logo.svg`],
   },
 
   referrer: "origin-when-cross-origin",
@@ -108,6 +108,16 @@ export const viewport: Viewport = {
   themeColor: "#ffffff",
 };
 
+const navLinks = [
+  { href: "/products", label: "Products" },
+  { href: "/flavors", label: "Flavors" },
+  { href: "/locations", label: "Locations" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+  { href: "/privacy", label: "Privacy" },
+  { href: "/terms", label: "Terms" },
+];
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -116,7 +126,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-screen overflow-hidden antialiased`}
     >
       <head>
         <script
@@ -127,7 +137,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: TITLE,
               url: SITE_URL,
-              logo: `${SITE_URL}/logo.png`,
+              logo: `${SITE_URL}/visha-logo.svg`,
               description: DESCRIPTION,
             }),
           }}
@@ -156,7 +166,7 @@ export default function RootLayout({
         <meta name="google-adsense-account" content="ca-pub-1361802956304203" />
       </head>
 
-      <body className="min-h-full flex flex-col">
+      <body className="h-screen flex flex-col overflow-hidden bg-zinc-50 dark:bg-black">
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-VHL8Y6LYN0"
           strategy="afterInteractive"
@@ -181,48 +191,57 @@ export default function RootLayout({
           <header className="w-full bg-white dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800">
             <div className="max-w-7xl mx-auto px-4 py-3 flex items-center gap-6">
               <Link href="/" className="font-semibold text-lg">
-                Home
+                Visha Chips
               </Link>
               <nav className="flex items-center gap-4">
-                <Link
-                  href="/provider"
-                  className="text-sm text-zinc-700 dark:text-zinc-300"
-                >
-                  Providers
-                </Link>
-                <Link
-                  href="/about"
-                  className="text-sm text-zinc-700 dark:text-zinc-300"
-                >
-                  About
-                </Link>
-                <Link
-                  href="/contact"
-                  className="text-sm text-zinc-700 dark:text-zinc-300"
-                >
-                  Contact
-                </Link>
-                <Link
-                  href="/privacy"
-                  className="text-sm text-zinc-700 dark:text-zinc-300"
-                >
-                  Privacy
-                </Link>
-                <Link
-                  href="/terms"
-                  className="text-sm text-zinc-700 dark:text-zinc-300"
-                >
-                  Terms
-                </Link>
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-sm text-zinc-700 dark:text-zinc-300"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
               </nav>
             </div>
           </header>
-          {children}
-          <AdsterraAd
-            type="socialBar"
-            scriptUrl="https://pl29719861.effectivecpmnetwork.com/9f/72/f3/9f72f3a6ec53badbb0ed3a07292e6a36.js"
-          />
+          <div className="flex-1 min-h-0 flex w-full overflow-hidden">
+            <aside className="hidden xl:flex w-[320px] shrink-0 h-full border-r border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 overflow-hidden flex-col items-center justify-center p-4">
+              <AdsterraAd
+                type="banner"
+                adKey="5e133825f54eeadfbb8f48674b5082f9"
+                width={300}
+                height={600}
+              />
+            </aside>
+
+            {/* Center Content (scrollable) */}
+            <div className="flex-1 h-full overflow-y-auto flex flex-col justify-between">
+              <main className="flex-1">
+                {children}
+              </main>
+            </div>
+
+            {/* Right Sidebar (fixed, no scroll) */}
+            <aside className="hidden xl:flex w-[320px] shrink-0 h-full border-l border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 overflow-hidden flex-col items-center justify-center p-4">
+              <div className="space-y-6">
+                <div className="flex justify-center">
+                  <AdsterraAd
+                    type="native"
+                    invokeUrl="https://pl29719922.effectivecpmnetwork.com/0acbbd07942e79258bf852d7d92fc5b8/invoke.js"
+                    containerId="container-0acbbd07942e79258bf852d7d92fc5b8"
+                  />
+                </div>
+              </div>
+            </aside>
+          </div>
+          <Footer />
         </ReduxProvider>
+        <AdsterraAd
+          type="socialBar"
+          scriptUrl="https://pl29719861.effectivecpmnetwork.com/9f/72/f3/9f72f3a6ec53badbb0ed3a07292e6a36.js"
+        />
       </body>
     </html>
   );

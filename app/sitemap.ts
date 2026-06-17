@@ -8,6 +8,10 @@ const staticRoutes = [
   "/privacy",
   "/terms",
   "/provider",
+  "/flavors",
+  "/products",
+  "/locations",
+  "/retail-distribution",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

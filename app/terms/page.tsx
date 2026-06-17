@@ -6,23 +6,23 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Terms & Conditions",
   description:
-    "Terms and Conditions for using Ad Provider Manager, including service use, liability, and publisher responsibilities.",
+    "Terms and Conditions for using Visha Chips website and services, including liability and partner responsibilities.",
   alternates: {
     canonical: "https://www.codexd.in/terms",
   },
   openGraph: {
-    title: "Terms & Conditions",
+    title: "Terms & Conditions — Visha Chips",
     description:
-      "Terms and Conditions for using Ad Provider Manager, including service use, liability, and publisher responsibilities.",
+      "Terms and Conditions for using Visha Chips website and services, including liability and partner responsibilities.",
     url: "https://www.codexd.in/terms",
     type: "website",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Terms & Conditions",
+    title: "Terms & Conditions — Visha Chips",
     description:
-      "Terms and Conditions for using Ad Provider Manager, including service use, liability, and publisher responsibilities.",
+      "Terms and Conditions for using Visha Chips website and services, including liability and partner responsibilities.",
   },
 };
 
@@ -63,10 +63,10 @@ export default function TermsPage() {
             "@type": "WebPage",
             name: "Terms & Conditions",
             url: "https://www.codexd.in/terms",
-            description: "Terms and Conditions for using Ad Provider Manager.",
+            description: "Terms and Conditions for using Visha Chips.",
             isPartOf: {
               "@type": "WebSite",
-              name: "Ad Provider Manager",
+              name: "Visha Chips",
               url: "https://www.codexd.in",
             },
           }),
@@ -77,27 +77,26 @@ export default function TermsPage() {
       </div>
 
       <p className="mb-4 text-zinc-700 dark:text-zinc-300 leading-relaxed">
-        These Terms & Conditions govern your use of Ad Provider Manager's
-        website and any services we provide. By using our Site, you agree to
-        these terms. If you do not agree, please do not use the Site.
+        These Terms & Conditions govern your use of Visha Chips' website and any
+        services we provide. By using our Site, you agree to these terms. If you
+        do not agree, please do not use the Site.
       </p>
 
       <h2 className="mt-4 font-semibold">Service Use</h2>
       <p className="mb-4 text-zinc-700 dark:text-zinc-300 leading-relaxed">
         You may use the Site for lawful purposes and in compliance with
-        applicable laws and advertising provider policies. Publishers remain
-        responsible for their own content and for ensuring that ad placements
-        meet the program policies of providers such as Google AdSense and
-        Adsterra.
+        applicable laws and partner policies. Retailers and partners remain
+        responsible for their own content and for ensuring that product
+        merchandising and promotions comply with local regulations.
       </p>
 
       <h2 className="mt-4 font-semibold">Limitation of Liability</h2>
       <p className="mb-4 text-zinc-700 dark:text-zinc-300 leading-relaxed">
-        To the fullest extent permitted by law, Ad Provider Manager and its
-        affiliates are not liable for indirect, incidental, or consequential
-        damages arising from use of the Site, including lost revenue or lost
-        data. We provide tools and guidance, but final implementation and any
-        compliance obligations remain with the publisher.
+        To the fullest extent permitted by law, Visha Chips and its affiliates
+        are not liable for indirect, incidental, or consequential damages
+        arising from use of the Site, including lost revenue or lost data. We
+        provide product information and support, but final implementation and
+        any compliance obligations remain with the retailer or partner.
       </p>
 
       <h2 className="mt-4 font-semibold">Third-Party Services</h2>
@@ -121,7 +120,8 @@ export default function TermsPage() {
           {" "}
           Privacy Policy
         </Link>
-        . For questions about these Terms, please contact support@codexd.in.
+        . For questions about these Terms, please contact
+        support@codexd.in.
       </p>
 
       <div className="mt-6">

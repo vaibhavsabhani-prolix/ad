@@ -1,4 +1,4 @@
-# SEO Report — Ad Provider Manager
+# SEO Report — Visha Chips
 
 Generated: 2026-06-15
 
@@ -39,8 +39,8 @@ Each use case below describes a common SEO need and provides a ready example (HT
 - Use case: Unique titles and descriptions improve CTR and reduce duplicate snippets.
 - Example:
 
-<title>About Us — Ad Provider Manager</title>
-<meta name="description" content="About Ad Provider Manager — what we build, supported networks, and benefits for publishers." />
+<title>About Us — Visha Chips</title>
+<meta name="description" content="About Visha Chips — our story, flavors, and where to buy." />
 
 - Implementation note: Keep titles ~50-60 chars and descriptions ~120-160 chars. Put primary keyword near the start.
 
@@ -49,12 +49,12 @@ Each use case below describes a common SEO need and provides a ready example (HT
 - Use case: Improve how links appear when shared on social channels.
 - Example meta tags:
 
-<meta property="og:title" content="Ad Provider Manager" />
-<meta property="og:description" content="Centralized ad management for publishers: AdSense, Adsterra, and more." />
-<meta property="og:image" content="https://www.codexd.in/logo.png" />
+<meta property="og:title" content="Visha Chips" />
+<meta property="og:description" content="Visha Chips — crispy potato chips in multiple flavors." />
+<meta property="og:image" content="https://www.codexd.in/visha-logo.png" />
 <meta property="og:url" content="https://www.codexd.in" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Ad Provider Manager" />
+<meta name="twitter:title" content="Visha Chips" />
 
 - Implementation note: We set global OpenGraph in `app/layout.tsx`; consider page-specific OG images & descriptions for higher engagement.
 
@@ -66,15 +66,15 @@ Each use case below describes a common SEO need and provides a ready example (HT
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Ad Provider Manager",
+  "name": "Visha Chips",
   "url": "https://www.codexd.in",
-  "logo": "https://www.codexd.in/logo.png"
+  "logo": "https://www.codexd.in/visha-logo.png"
 }</script>
 
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Ad Provider Manager",
+  "name": "Visha Chips",
   "url": "https://www.codexd.in"
 }</script>
 
@@ -106,9 +106,9 @@ Each use case below describes a common SEO need and provides a ready example (HT
 - Use case: Only one H1 per page; use H2/H3 for subsections for both accessibility and SEO.
 - Example:
 
-<h1>Ad Provider Manager</h1>
-<h2>Supported Advertising Networks</h2>
-<h3>Google AdSense</h3>
+<h1>Visha Chips</h1>
+<h2>Product Categories</h2>
+<h3>Retail Partners</h3>
 
 - Implementation note: We ensured one H1 on each page.
 
@@ -154,8 +154,8 @@ Sitemap: https://www.codexd.in/sitemap.xml
   "@type": "FAQPage",
   "mainEntity": [{
     "@type": "Question",
-    "name": "Is Ad Provider Manager compatible with AdSense?",
-    "acceptedAnswer": { "@type": "Answer", "text": "Yes. We provide AdSense-friendly configurations and guidance." }
+    "name": "Are Visha Chips available in multiple flavors?",
+    "acceptedAnswer": { "@type": "Answer", "text": "Yes. Visha Chips are available in Salted, Masala, Tangy Tomato, and Spicy Chili." }
   }]
 }</script>
 

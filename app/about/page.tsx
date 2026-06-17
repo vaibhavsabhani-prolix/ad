@@ -5,28 +5,28 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About Us",
+  title: "About Visha Chips",
 
   description:
-    "About Ad Provider Manager — what we build, why we built it, supported networks, and how publishers benefit from centralized ad management.",
+    "Learn about Visha Chips — our history, production practices, flavors, and where to buy our snacks.",
 
   alternates: {
     canonical: "https://www.codexd.in/about",
   },
 
   openGraph: {
-    title: "About Ad Provider Manager",
+    title: "About Visha Chips",
     description:
-      "Learn about Ad Provider Manager and how we help publishers manage multiple advertising networks.",
+      "Visha Chips — handcrafted potato chips made in certified facilities.",
     url: "https://www.codexd.in/about",
     type: "website",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "About Ad Provider Manager",
+    title: "About Visha Chips",
     description:
-      "Learn about Ad Provider Manager and how we help publishers manage multiple advertising networks.",
+      "Visha Chips — handcrafted potato chips made in certified facilities.",
   },
 };
 
@@ -39,7 +39,7 @@ const Paragraph = ({ children }: { children: React.ReactNode }) => (
 export default function AboutPage() {
   return (
     <div className="min-h-screen p-6 max-w-4xl mx-auto">
-      <h1 className="text-2xl font-bold mb-4">About Ad Provider Manager</h1>
+      <h1 className="text-2xl font-bold mb-4">About Visha Chips</h1>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -70,13 +70,13 @@ export default function AboutPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "AboutPage",
-            name: "About Ad Provider Manager",
+            name: "About Visha Chips",
             url: "https://www.codexd.in/about",
             description:
-              "Learn about Ad Provider Manager and how it helps publishers manage multiple advertising networks.",
+              "Learn about Visha Chips, our values, and production practices.",
             isPartOf: {
               "@type": "WebSite",
-              name: "Ad Provider Manager",
+              name: "Visha Chips",
               url: "https://www.codexd.in",
             },
           }),
@@ -88,67 +88,39 @@ export default function AboutPage() {
       </div>
 
       <Paragraph>
-        Ad Provider Manager is a lightweight ad-operations product that helps
-        publishers centralize the setup and management of multiple advertising
-        networks. Our goal is to reduce the technical overhead of running ads
-        across one or many websites while helping publishers stay aligned with
-        network policies and user experience best practices.
+        Visha Chips started as a small, family-run snack maker with a mission to
+        craft delicious, high-quality potato chips using simple ingredients and
+        time-tested techniques.
       </Paragraph>
 
       <Paragraph>
-        Why we built this: publishers and site owners often juggle different ad
-        providers, each with its own tag formats, responsive size maps, and
-        configuration quirks. Repeatedly editing templates and theme files to
-        change placements or swap networks is time consuming and error-prone. Ad
-        Provider Manager provides a single source of truth for ad slots,
-        priority rules, and fallbacks so teams can iterate faster and reduce
-        rollout mistakes.
+        Our production emphasizes freshness and consistency. Potatoes are
+        sourced from trusted growers, fried in small batches, and seasoned to
+        highlight authentic flavors. We maintain strict food-safety standards
+        and clear labeling for allergens and nutrition.
       </Paragraph>
 
       <Paragraph>
-        Supported advertising networks include Google AdSense and Adsterra, and
-        the platform is designed to integrate additional programmatic or
-        direct-sale partners. We document recommended slot sizes, responsive
-        behaviors, and policy-related notes for each provider to help you make
-        informed decisions during setup and approval flows.
+        Product range: Salted, Masala, Tangy Tomato, and Spicy Chili in multiple
+        pack sizes. Retail and wholesale options are available; contact our team
+        for bulk pricing and distribution.
       </Paragraph>
 
       <Paragraph>
-        Benefits for publishers: streamlined ad placement management, fewer
-        implementation errors, standardized naming conventions across sites, and
-        basic revenue optimization tools such as priority rules and rotation.
-        The product is suitable for solo publishers, small teams, and publishers
-        managing multiple domains.
+        We plan to expand our flavor lineup and distribution while keeping a
+        focus on quality. Follow us on social media and check the Contact page
+        for promotional offers and sample requests.
       </Paragraph>
 
       <Paragraph>
-        Ad management workflow: define named slots (header, inline, sidebar,
-        footer), assign size maps and breakpoints, then attach provider rules
-        and optional creative targeting. You can set primary and fallback
-        providers and schedule quick experiments to measure uplift. The
-        read-only snippets provided by the dashboard are intentionally small to
-        avoid degrading site performance or SEO.
-      </Paragraph>
-
-      <Paragraph>
-        Future plans include deeper analytics integrations, server-side bidding
-        adapters, and tooling for consent and first-party data that helps
-        publishers retain more control over ad decisions. We also plan to expand
-        documentation and provide examples for the most common CMS and hosting
-        platforms.
-      </Paragraph>
-
-      <Paragraph>
-        To learn more about privacy and analytics, see our
+        To learn more about privacy and product details, see our
         <Link href="/privacy" className="text-blue-600">
-          {" "}
           Privacy Policy
         </Link>
-        . For questions or business inquiries, visit the
+        . For business inquiries, visit the
         <Link href="/contact" className="text-blue-600">
-          {" "}
           Contact
-        </Link>{" "}
+        </Link>
         page.
       </Paragraph>
 

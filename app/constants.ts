@@ -1,7 +1,7 @@
-export const SITE_URL = "https://www.codexd.in";
-export const TITLE = "Ad Provider Manager";
+export const SITE_URL = "https://codexd.in";
+export const TITLE = "Visha Chips";
 export const DESCRIPTION =
-  "Manage advertising providers including Google AdSense, Adsterra and other ad networks from a single platform.";
+  "Visha Chips — crispy, delicious potato chips made with natural ingredients. Available in multiple flavors and pack sizes for retail and wholesale.";
 
 export type Provider = {
   slug: string;

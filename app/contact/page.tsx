@@ -5,25 +5,25 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
+  title: "Contact Visha Chips",
   description:
-    "Get in touch with the Ad Provider Manager team for support, business inquiries, or general questions. Find response times and contact channels here.",
+    "Get in touch with Visha Chips for support, wholesale, or general questions. Find contact channels and response expectations.",
   alternates: {
     canonical: "https://www.codexd.in/contact",
   },
   openGraph: {
-    title: "Contact Ad Provider Manager",
+    title: "Contact Visha Chips",
     description:
-      "Contact the Ad Provider Manager team for support, business inquiries, and partnerships.",
+      "Contact Visha Chips for wholesale, retail, and general inquiries.",
     url: "https://www.codexd.in/contact",
     type: "website",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Contact Ad Provider Manager",
+    title: "Contact Visha Chips",
     description:
-      "Contact the Ad Provider Manager team for support, business inquiries, and partnerships.",
+      "Contact Visha Chips for wholesale, retail, and general inquiries.",
   },
 };
 
@@ -68,13 +68,13 @@ export default function ContactPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ContactPage",
-            name: "Contact Ad Provider Manager",
+            name: "Contact Visha Chips",
             url: "https://www.codexd.in/contact",
             description:
-              "Contact Ad Provider Manager for support, business inquiries, and partnerships.",
+              "Contact Visha Chips for wholesale, retail, and support inquiries.",
             isPartOf: {
               "@type": "WebSite",
-              name: "Ad Provider Manager",
+              name: "Visha Chips",
               url: "https://www.codexd.in",
             },
           }),
@@ -86,41 +86,35 @@ export default function ContactPage() {
       </div>
 
       <Paragraph>
-        Thank you for your interest in Ad Provider Manager. We welcome support
-        requests, business inquiries, feedback, and partnership proposals. For
-        the fastest response, email the appropriate channel below and include
-        relevant details (site URL, account ID, screenshots, and an outline of
-        your request).
+        Thank you for your interest in Visha Chips. We welcome support requests,
+        wholesale inquiries, feedback, and media questions. For the fastest
+        response, email the appropriate channel below and include any relevant
+        details.
       </Paragraph>
 
       <h2 className="text-lg font-semibold mt-4">Support</h2>
       <Paragraph>
-        For technical support and account assistance, please email
-        support@codexd.in. Our support team typically responds within 24–48
-        business hours for standard inquiries. For urgent operational issues
-        affecting live revenue or site behavior, include "URGENT" in the subject
-        line and provide clear reproduction steps.
+        For product support and allergen information, please email
+        support@codexd.in. Our team typically responds within 24–48
+        business hours.
       </Paragraph>
 
-      <h2 className="text-lg font-semibold mt-4">Business Inquiries</h2>
+      <h2 className="text-lg font-semibold mt-4">Wholesale & Retail</h2>
       <Paragraph>
-        For partnerships, sales, or potential integrations, contact
-        partnerships@codexd.in. We review partnership requests and typically
-        reply within 3–5 business days. Include a short summary of mutual
-        benefits, expected traffic volumes, and targeting details when
-        applicable.
+        For wholesale, distribution, or retail partnership inquiries, contact
+        sales@codexd.in. Include order volumes, delivery region, and
+        expected timelines for a faster reply.
       </Paragraph>
 
       <h2 className="text-lg font-semibold mt-4">General Contact</h2>
       <Paragraph>
-        For general questions, press, or media inquiries, contact
-        hello@codexd.in. If you're unsure which channel to use, send an email to
-        hello@codexd.in and we will route your request to the appropriate team.
+        For press or media inquiries, contact media@codexd.in. If you're
+        unsure which channel to use, email hello@codexd.in and we will
+        route your request appropriately.
       </Paragraph>
 
       <Paragraph>
-        Prefer self-service? Check the About page for product details and our
-        Privacy Policy for information about data handling and analytics:
+        Prefer self-service? Check the About page for company details and our
         <Link href="/privacy" className="text-blue-600">
           {" "}
           Privacy Policy

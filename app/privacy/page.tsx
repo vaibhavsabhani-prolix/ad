@@ -6,22 +6,22 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Privacy Policy for Ad Provider Manager explaining data collection, cookies, Google AdSense, Google Analytics, Adsterra and third-party advertising practices.",
+    "Privacy Policy for Visha Chips explaining data collection, cookies, analytics, advertising integrations, and third-party practices.",
   alternates: {
     canonical: "https://www.codexd.in/privacy",
   },
   openGraph: {
-    title: "Privacy Policy",
+    title: "Privacy Policy — Visha Chips",
     description:
-      "Privacy Policy for Ad Provider Manager explaining data collection, cookies, Google AdSense, Google Analytics, Adsterra and third-party advertising practices.",
+      "Privacy Policy for Visha Chips explaining data collection, cookies, analytics, advertising integrations, and third-party practices.",
     url: "https://www.codexd.in/privacy",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Privacy Policy",
+    title: "Privacy Policy — Visha Chips",
     description:
-      "Privacy Policy for Ad Provider Manager explaining data collection, cookies, Google AdSense, Google Analytics, Adsterra and third-party advertising practices.",
+      "Privacy Policy for Visha Chips explaining data collection, cookies, analytics, advertising integrations, and third-party practices.",
   },
 };
 
@@ -63,10 +63,10 @@ export default function PrivacyPage() {
             name: "Privacy Policy",
             url: "https://www.codexd.in/privacy",
             description:
-              "Privacy Policy for Ad Provider Manager explaining data collection, cookies, Google AdSense, Google Analytics, Adsterra and third-party advertising practices.",
+              "Privacy Policy for Visha Chips explaining data collection, cookies, analytics, advertising integrations, and third-party practices.",
             isPartOf: {
               "@type": "WebSite",
-              name: "Ad Provider Manager",
+              name: "Visha Chips",
               url: "https://www.codexd.in",
             },
           }),
@@ -78,12 +78,13 @@ export default function PrivacyPage() {
       </div>
 
       <p className="mb-4 text-zinc-700 dark:text-zinc-300 leading-relaxed">
-        This Privacy Policy describes how Ad Provider Manager ("we", "us",
-        "our") collects, uses, and discloses information when you visit or use
-        our website at https://www.codexd.in (the "Site") and when you use
-        features that reference our services. We take privacy and data
+        This Privacy Policy describes how Visha Chips ("we", "us", "our")
+        collects, uses, and discloses information when you visit or use our
+        website at https://www.codexd.in (the "Site") and when you use
+        features related to our products and services. We take privacy and data
         stewardship seriously and provide controls and documentation to help
-        publishers make informed decisions about advertising and analytics.
+        customers and partners make informed decisions about advertising and
+        analytics.
       </p>
 
       <h2 className="mt-4 font-semibold">1. Information We Collect</h2>
@@ -132,8 +133,8 @@ export default function PrivacyPage() {
       <p className="mb-4 text-zinc-700 dark:text-zinc-300 leading-relaxed">
         We use Google Analytics for aggregated analytics about site traffic and
         engagement. Google Analytics collects data through cookies, including
-        anonymized IP addresses and page-level events. If you are a publisher
-        integrating Ad Provider Manager, you control whether and how analytics
+        anonymized IP addresses and page-level events. If you are a partner or
+        retailer integrating our services, you control whether and how analytics
         are deployed on your property. See Google’s documentation for options
         like IP anonymization and data retention settings.
       </p>
@@ -155,9 +156,9 @@ export default function PrivacyPage() {
         Adsterra is an advertising network that may be used to serve banner,
         native, and other ad formats. Adsterra may collect cookies, device
         identifiers, and engagement metrics that help optimize deliveries and
-        measure conversions. If you are a publisher using Ad Provider Manager
-        with Adsterra, follow Adsterra’s publisher guidelines and ensure any opt
-        outs or consent requirements are respected on your site.
+        measure conversions. If you are a retailer or partner using our
+        advertising integrations, follow partner guidelines and ensure any
+        opt-outs or consent requirements are respected on your site.
       </p>
 
       <h2 className="mt-4 font-semibold">7. How We Use Information</h2>
@@ -181,8 +182,8 @@ export default function PrivacyPage() {
       <p className="mb-4 text-zinc-700 dark:text-zinc-300 leading-relaxed">
         Depending on your jurisdiction, you may have rights to access, correct,
         export, or delete the personal data we hold about you. To exercise these
-        rights, please contact support@codexd.in and provide details of your
-        request. We will respond in accordance with applicable law.
+        rights, please contact support@codexd.in and provide details of
+        your request. We will respond in accordance with applicable law.
       </p>
 
       <h2 className="mt-4 font-semibold">10. Data Retention and Security</h2>
@@ -211,7 +212,8 @@ export default function PrivacyPage() {
       <h2 className="mt-4 font-semibold">13. Contact</h2>
       <p className="mb-4 text-zinc-700 dark:text-zinc-300 leading-relaxed">
         If you have questions about this Privacy Policy, data practices, or
-        exercise of your rights, contact us at support@codexd.in or visit our
+        exercise of your rights, contact us at support@codexd.in or visit
+        our
         <Link href="/contact" className="text-blue-600">
           {" "}
           Contact page
