@@ -66,9 +66,15 @@ const FLAVORS: Flavor[] = [
     image: "/flavors/salted.png",
     spiciness: 0,
     badge: "Savory & Light",
-    badgeColor: "bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300 border-amber-200 dark:border-amber-800",
-    cardColor: "from-amber-500/10 to-yellow-600/10 hover:border-amber-400 dark:hover:border-amber-600",
-    keyIngredients: ["Select Potatoes", "Pure Sea Salt", "Quality Vegetable Oil"],
+    badgeColor:
+      "bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300 border-amber-200 dark:border-amber-800",
+    cardColor:
+      "from-amber-500/10 to-yellow-600/10 hover:border-amber-400 dark:hover:border-amber-600",
+    keyIngredients: [
+      "Select Potatoes",
+      "Pure Sea Salt",
+      "Quality Vegetable Oil",
+    ],
     nutritionalInfo: {
       calories: "150 kcal",
       totalFat: "9g",
@@ -84,8 +90,10 @@ const FLAVORS: Flavor[] = [
     image: "/flavors/masala.png",
     spiciness: 4,
     badge: "Bold & Zesty",
-    badgeColor: "bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300 border-orange-200 dark:border-orange-800",
-    cardColor: "from-orange-500/10 to-red-600/10 hover:border-orange-400 dark:hover:border-orange-600",
+    badgeColor:
+      "bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300 border-orange-200 dark:border-orange-800",
+    cardColor:
+      "from-orange-500/10 to-red-600/10 hover:border-orange-400 dark:hover:border-orange-600",
     keyIngredients: [
       "Select Potatoes",
       "Red Chili Powder",
@@ -109,8 +117,10 @@ const FLAVORS: Flavor[] = [
     image: "/flavors/tomato.png",
     spiciness: 1,
     badge: "Tangy & Sweet",
-    badgeColor: "bg-rose-100 text-rose-800 dark:bg-rose-900/30 dark:text-rose-300 border-rose-200 dark:border-rose-800",
-    cardColor: "from-rose-500/10 to-red-500/10 hover:border-rose-400 dark:hover:border-rose-600",
+    badgeColor:
+      "bg-rose-100 text-rose-800 dark:bg-rose-900/30 dark:text-rose-300 border-rose-200 dark:border-rose-800",
+    cardColor:
+      "from-rose-500/10 to-red-500/10 hover:border-rose-400 dark:hover:border-rose-600",
     keyIngredients: [
       "Select Potatoes",
       "Natural Tomato Powder",
@@ -134,8 +144,10 @@ const FLAVORS: Flavor[] = [
     image: "/flavors/chili.png",
     spiciness: 5,
     badge: "Fiery Heat",
-    badgeColor: "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300 border-red-200 dark:border-red-800",
-    cardColor: "from-red-600/10 to-orange-600/10 hover:border-red-500 dark:hover:border-red-600",
+    badgeColor:
+      "bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300 border-red-200 dark:border-red-800",
+    cardColor:
+      "from-red-600/10 to-orange-600/10 hover:border-red-500 dark:hover:border-red-600",
     keyIngredients: [
       "Select Potatoes",
       "Dried Red Chili",
@@ -187,7 +199,8 @@ export default function FlavorsPage() {
             "@context": "https://schema.org",
             "@type": "ItemList",
             name: "Visha Chips Flavors",
-            description: "The core premium potato chips flavors offered by Visha Chips.",
+            description:
+              "The core premium potato chips flavors offered by Visha Chips.",
             itemListElement: FLAVORS.map((f, i) => ({
               "@type": "ListItem",
               position: i + 1,
@@ -196,9 +209,24 @@ export default function FlavorsPage() {
                 name: `Visha Chips ${f.name}`,
                 image: `${SITE_URL}${f.image}`,
                 description: f.description,
+
                 brand: {
                   "@type": "Brand",
                   name: "Visha Chips",
+                },
+
+                category: "Potato Chips",
+
+                manufacturer: {
+                  "@type": "Organization",
+                  name: "Visha Chips",
+                },
+
+                nutrition: {
+                  "@type": "NutritionInformation",
+                  calories: f.nutritionalInfo.calories,
+                  fatContent: f.nutritionalInfo.totalFat,
+                  sodiumContent: f.nutritionalInfo.sodium,
                 },
               },
             })),
@@ -245,17 +273,25 @@ export default function FlavorsPage() {
       {/* Main Container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         {/* Breadcrumb Navigation Bar */}
-        <nav className="flex mb-6 text-sm text-zinc-500 dark:text-zinc-400" aria-label="Breadcrumb">
+        <nav
+          className="flex mb-6 text-sm text-zinc-500 dark:text-zinc-400"
+          aria-label="Breadcrumb"
+        >
           <ol className="inline-flex items-center space-x-1 md:space-x-3">
             <li className="inline-flex items-center">
-              <Link href="/" className="hover:text-zinc-700 dark:hover:text-zinc-200 transition-colors">
+              <Link
+                href="/"
+                className="hover:text-zinc-700 dark:hover:text-zinc-200 transition-colors"
+              >
                 Home
               </Link>
             </li>
             <li>
               <div className="flex items-center">
                 <span className="mx-2 text-zinc-400">/</span>
-                <span className="text-zinc-800 dark:text-zinc-100 font-medium">Flavors</span>
+                <span className="text-zinc-800 dark:text-zinc-100 font-medium">
+                  Flavors
+                </span>
               </div>
             </li>
           </ol>
@@ -272,7 +308,9 @@ export default function FlavorsPage() {
             Visha Chips Signature Flavors
           </h1>
           <p className="text-lg text-zinc-600 dark:text-zinc-300">
-            Handcrafted with precision, batch-fried to absolute crunchiness, and dusted with premium natural spices. Discover your next favorite snack.
+            Handcrafted with precision, batch-fried to absolute crunchiness, and
+            dusted with premium natural spices. Discover your next favorite
+            snack.
           </p>
         </div>
 
@@ -328,7 +366,9 @@ export default function FlavorsPage() {
                     )}
                   </div>
 
-                  <h2 className="text-2xl font-bold mb-1 text-zinc-900 dark:text-zinc-50">{flavor.name}</h2>
+                  <h2 className="text-2xl font-bold mb-1 text-zinc-900 dark:text-zinc-50">
+                    {flavor.name}
+                  </h2>
                   <p className="text-sm italic font-medium text-orange-600 dark:text-orange-400 mb-4">
                     {flavor.tagline}
                   </p>
@@ -395,35 +435,50 @@ export default function FlavorsPage() {
               Visha Chips Pairing Guide
             </h2>
             <p className="text-zinc-300 mb-8 leading-relaxed">
-              Elevate your snacking experience by pairing our uniquely spiced chips with the perfect dips and beverages.
+              Elevate your snacking experience by pairing our uniquely spiced
+              chips with the perfect dips and beverages.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="border border-zinc-800 rounded-2xl p-5 bg-zinc-900/50 backdrop-blur-sm">
-                <h3 className="font-semibold text-orange-400 mb-2">Classic Salted & Creamy Dips</h3>
+                <h3 className="font-semibold text-orange-400 mb-2">
+                  Classic Salted & Creamy Dips
+                </h3>
                 <p className="text-xs text-zinc-400 leading-relaxed">
-                  The clean crunch of Classic Salted pairs spectacularly with garlic aioli, rich onion dips, or alongside your favorite sandwich.
+                  The clean crunch of Classic Salted pairs spectacularly with
+                  garlic aioli, rich onion dips, or alongside your favorite
+                  sandwich.
                 </p>
               </div>
 
               <div className="border border-zinc-800 rounded-2xl p-5 bg-zinc-900/50 backdrop-blur-sm">
-                <h3 className="font-semibold text-orange-400 mb-2">Spicy Masala & Yogurt Raitha</h3>
+                <h3 className="font-semibold text-orange-400 mb-2">
+                  Spicy Masala & Yogurt Raitha
+                </h3>
                 <p className="text-xs text-zinc-400 leading-relaxed">
-                  Cool down the robust Indian spice blend of Spicy Masala with a refreshing cucumber raitha or a sweet-and-sour mango chutney.
+                  Cool down the robust Indian spice blend of Spicy Masala with a
+                  refreshing cucumber raitha or a sweet-and-sour mango chutney.
                 </p>
               </div>
 
               <div className="border border-zinc-800 rounded-2xl p-5 bg-zinc-900/50 backdrop-blur-sm">
-                <h3 className="font-semibold text-orange-400 mb-2">Tangy Tomato & Avocados</h3>
+                <h3 className="font-semibold text-orange-400 mb-2">
+                  Tangy Tomato & Avocados
+                </h3>
                 <p className="text-xs text-zinc-400 leading-relaxed">
-                  The vibrant, sweet-and-sour tomato flavor matches wonderfully with fresh, rich guacamole or chopped pico de gallo.
+                  The vibrant, sweet-and-sour tomato flavor matches wonderfully
+                  with fresh, rich guacamole or chopped pico de gallo.
                 </p>
               </div>
 
               <div className="border border-zinc-800 rounded-2xl p-5 bg-zinc-900/50 backdrop-blur-sm">
-                <h3 className="font-semibold text-orange-400 mb-2">Spicy Chili & Cold Beverages</h3>
+                <h3 className="font-semibold text-orange-400 mb-2">
+                  Spicy Chili & Cold Beverages
+                </h3>
                 <p className="text-xs text-zinc-400 leading-relaxed">
-                  Balance the intense, fiery kick of Spicy Chili with an ice-cold lemonade or a crisp ginger beer to cleanse your palate.
+                  Balance the intense, fiery kick of Spicy Chili with an
+                  ice-cold lemonade or a crisp ginger beer to cleanse your
+                  palate.
                 </p>
               </div>
             </div>
@@ -436,7 +491,9 @@ export default function FlavorsPage() {
             Want Visha Chips in Your Store?
           </h2>
           <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-6">
-            We partner with supermarkets, local convenience stores, and distributors to bring our premium chips everywhere. Contact us for bulk wholesale rates.
+            We partner with supermarkets, local convenience stores, and
+            distributors to bring our premium chips everywhere. Contact us for
+            bulk wholesale rates.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
