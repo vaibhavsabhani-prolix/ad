@@ -6,7 +6,6 @@ import AdsterraAd from "../AdsterraAdProps";
 import GoogleAd from "../GoogleAd";
 import { SITE_URL } from "../layout";
 
-
 export const metadata: Metadata = {
   title: "Visha Chips Products — Potato Chips Packaging Sizes",
   description:
@@ -32,7 +31,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Visha Chips Products — Potato Chips Packaging Sizes",
-    description: "Find your perfect pack size. From individual bags to bulk wholesale.",
+    description:
+      "Find your perfect pack size. From individual bags to bulk wholesale.",
     images: [`${SITE_URL}/products/lineup.png`],
   },
 };
@@ -58,7 +58,8 @@ const PRODUCT_SIZES: ProductSize[] = [
       "Perfect for lunchboxes, quick afternoon pick-me-ups, or on-the-go snacking. Individually sealed to guarantee peak freshness and crunch.",
     idealFor: "Office snacking, kids' lunches, traveling, quick treats.",
     keyHighlight: "Low calorie, portion-controlled.",
-    cardColor: "from-amber-500/5 to-yellow-500/5 border-amber-200/60 dark:border-amber-900/30",
+    cardColor:
+      "from-amber-500/5 to-yellow-500/5 border-amber-200/60 dark:border-amber-900/30",
     buttonText: "Where to Buy",
     buttonHref: "/locations",
   },
@@ -70,7 +71,8 @@ const PRODUCT_SIZES: ProductSize[] = [
       "Our most popular size! Designed for sharing with friends and family. Features a resealable seal on premium bags to keep chips crunchy between sessions.",
     idealFor: "Movie nights, small picnics, family dinners, gaming sessions.",
     keyHighlight: "Resealable lock, best value.",
-    cardColor: "from-orange-500/5 to-amber-500/5 border-orange-200/60 dark:border-orange-900/30",
+    cardColor:
+      "from-orange-500/5 to-amber-500/5 border-orange-200/60 dark:border-orange-900/30",
     buttonText: "Where to Buy",
     buttonHref: "/locations",
   },
@@ -82,7 +84,8 @@ const PRODUCT_SIZES: ProductSize[] = [
       "A massive carton packed with our signature chips. Made to feed a crowd. Ideal for self-serve bowls and snack tables.",
     idealFor: "Birthday parties, game day, barbecues, holiday gatherings.",
     keyHighlight: "Eco-friendly recyclable box, crowd pleaser.",
-    cardColor: "from-rose-500/5 to-red-500/5 border-rose-200/60 dark:border-rose-900/30",
+    cardColor:
+      "from-rose-500/5 to-red-500/5 border-rose-200/60 dark:border-rose-900/30",
     buttonText: "Find Retailers",
     buttonHref: "/locations",
   },
@@ -94,7 +97,8 @@ const PRODUCT_SIZES: ProductSize[] = [
       "Designed for retailers, food stalls, event organizers, or die-hard fans. Contains individual cases packed securely to prevent crushing during transit.",
     idealFor: "Supermarkets, convenience stores, caterers, corporate events.",
     keyHighlight: "Tiered pricing, direct distributor shipping.",
-    cardColor: "from-red-600/5 to-orange-600/5 border-red-200/60 dark:border-red-900/30",
+    cardColor:
+      "from-red-600/5 to-orange-600/5 border-red-200/60 dark:border-red-900/30",
     buttonText: "Inquire Wholesale",
     buttonHref: "/retail-distribution",
   },
@@ -135,7 +139,8 @@ export default function ProductsPage() {
             "@context": "https://schema.org",
             "@type": "ItemList",
             name: "Visha Chips Products",
-            description: "The complete range of package sizes and retail solutions for Visha Chips.",
+            description:
+              "The complete range of package sizes and retail solutions for Visha Chips.",
             itemListElement: PRODUCT_SIZES.map((prod, i) => ({
               "@type": "ListItem",
               position: i + 1,
@@ -145,8 +150,10 @@ export default function ProductsPage() {
                 image: `${SITE_URL}/products/lineup.png`,
                 description: prod.description,
                 offers: {
-                  "@type": "AggregateOffer",
+                  "@type": "Offer",
                   priceCurrency: "INR",
+                  price: "20",
+                  availability: "https://schema.org/InStock",
                   itemCondition: "https://schema.org/NewCondition",
                 },
                 brand: {
@@ -162,17 +169,25 @@ export default function ProductsPage() {
       {/* Page Body Container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         {/* Breadcrumb Navigation Bar */}
-        <nav className="flex mb-6 text-sm text-zinc-500 dark:text-zinc-400" aria-label="Breadcrumb">
+        <nav
+          className="flex mb-6 text-sm text-zinc-500 dark:text-zinc-400"
+          aria-label="Breadcrumb"
+        >
           <ol className="inline-flex items-center space-x-1 md:space-x-3">
             <li className="inline-flex items-center">
-              <Link href="/" className="hover:text-zinc-700 dark:hover:text-zinc-200 transition-colors">
+              <Link
+                href="/"
+                className="hover:text-zinc-700 dark:hover:text-zinc-200 transition-colors"
+              >
                 Home
               </Link>
             </li>
             <li>
               <div className="flex items-center">
                 <span className="mx-2 text-zinc-400">/</span>
-                <span className="text-zinc-800 dark:text-zinc-100 font-medium">Products</span>
+                <span className="text-zinc-800 dark:text-zinc-100 font-medium">
+                  Products
+                </span>
               </div>
             </li>
           </ol>
@@ -189,7 +204,9 @@ export default function ProductsPage() {
             Visha Chips Product Range
           </h1>
           <p className="text-lg text-zinc-600 dark:text-zinc-300">
-            From quick individual snacks to massive crowd-feeders and wholesale distribution cases — discover the ideal Visha Chips pack for your needs.
+            From quick individual snacks to massive crowd-feeders and wholesale
+            distribution cases — discover the ideal Visha Chips pack for your
+            needs.
           </p>
         </div>
 
@@ -211,7 +228,8 @@ export default function ProductsPage() {
               Specially engineered bags to lock in the crunch.
             </h2>
             <p className="text-xs sm:text-sm text-zinc-300 max-w-xl mt-2">
-              Our advanced multi-layer packaging shields our potato chips from moisture and UV light, ensuring every chip cracks with perfection.
+              Our advanced multi-layer packaging shields our potato chips from
+              moisture and UV light, ensuring every chip cracks with perfection.
             </p>
           </div>
         </div>
@@ -225,7 +243,9 @@ export default function ProductsPage() {
             >
               <div>
                 <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
-                  <h3 className="text-2xl font-bold text-zinc-950 dark:text-zinc-50">{prod.name}</h3>
+                  <h3 className="text-2xl font-bold text-zinc-950 dark:text-zinc-50">
+                    {prod.name}
+                  </h3>
                   <span className="text-sm font-semibold bg-orange-100 dark:bg-orange-950/40 text-orange-700 dark:text-orange-300 px-3 py-1 rounded-full border border-orange-200/55 dark:border-orange-850/35">
                     {prod.weight}
                   </span>
@@ -236,12 +256,20 @@ export default function ProductsPage() {
 
                 <div className="space-y-2 mb-6 border-t border-zinc-200/60 dark:border-zinc-850/60 pt-4 text-xs sm:text-sm">
                   <p>
-                    <span className="font-bold text-zinc-700 dark:text-zinc-300">Ideal for: </span>
-                    <span className="text-zinc-600 dark:text-zinc-400">{prod.idealFor}</span>
+                    <span className="font-bold text-zinc-700 dark:text-zinc-300">
+                      Ideal for:{" "}
+                    </span>
+                    <span className="text-zinc-600 dark:text-zinc-400">
+                      {prod.idealFor}
+                    </span>
                   </p>
                   <p>
-                    <span className="font-bold text-zinc-700 dark:text-zinc-300">Highlight: </span>
-                    <span className="text-zinc-600 dark:text-zinc-400">{prod.keyHighlight}</span>
+                    <span className="font-bold text-zinc-700 dark:text-zinc-300">
+                      Highlight:{" "}
+                    </span>
+                    <span className="text-zinc-600 dark:text-zinc-400">
+                      {prod.keyHighlight}
+                    </span>
                   </p>
                 </div>
               </div>
@@ -267,7 +295,9 @@ export default function ProductsPage() {
             Available in Four Mind-Blowing Flavors
           </h2>
           <p className="text-zinc-650 dark:text-zinc-350 max-w-xl mx-auto mb-6">
-            All our packaging sizes are available across our signature flavor portfolio: Classic Salted, Spicy Masala, Tangy Tomato, and Spicy Chili.
+            All our packaging sizes are available across our signature flavor
+            portfolio: Classic Salted, Spicy Masala, Tangy Tomato, and Spicy
+            Chili.
           </p>
           <Link
             href="/flavors"
