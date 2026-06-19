@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const SITE_URL = "https://codexd.in";
+export const SITE_URL = "https://codexd.in";
 const TITLE = "Visha Chips";
 const DESCRIPTION =
   "Visha Chips — crispy, delicious potato chips made with natural ingredients. Available in multiple flavors and pack sizes for every occasion.";
