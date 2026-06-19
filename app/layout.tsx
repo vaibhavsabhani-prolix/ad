@@ -6,6 +6,7 @@ import Script from "next/script";
 import Link from "next/link";
 import AdsterraAd from "./AdsterraAdProps";
 import Footer from "./components/Footer";
+import { SITE_URL } from "./constants";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,7 +18,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const SITE_URL = "https://codexd.in";
 const TITLE = "Visha Chips";
 const DESCRIPTION =
   "Visha Chips — crispy, delicious potato chips made with natural ingredients. Available in multiple flavors and pack sizes for every occasion.";

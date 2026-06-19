@@ -6,8 +6,7 @@ import ScreenshotPlaceholder from "../components/ScreenshotPlaceholder";
 import Workflow from "../components/Workflow";
 import FAQ from "../components/FAQ";
 import Link from "next/link";
-
-const SITE_URL = "https://www.codexd.in";
+import { SITE_URL } from "../constants";
 
 export const metadata: Metadata = {
   title: "Locations — Visha Chips",

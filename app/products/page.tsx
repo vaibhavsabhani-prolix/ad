@@ -4,7 +4,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import AdsterraAd from "../AdsterraAdProps";
 import GoogleAd from "../GoogleAd";
-import { SITE_URL } from "../layout";
+import { SITE_URL } from "../constants";
 
 export const metadata: Metadata = {
   title: "Visha Chips Products — Potato Chips Packaging Sizes",

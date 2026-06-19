@@ -3,8 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import AdsterraAd from "../AdsterraAdProps";
 import GoogleAd from "../GoogleAd";
-
-const SITE_URL = "https://codexd.in";
+import { SITE_URL } from "../constants";
 
 export const metadata: Metadata = {
   title: "Visha Chips Flavors — Crispy Potato Chips Varieties",
