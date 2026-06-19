@@ -1,11 +1,10 @@
-import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
 import AdsterraAd from "../AdsterraAdProps";
 import GoogleAd from "../GoogleAd";
 
-const SITE_URL = "https://www.codexd.in";
+const SITE_URL = "https://codexd.in";
 
 export const metadata: Metadata = {
   title: "Visha Chips Flavors — Crispy Potato Chips Varieties",
@@ -227,6 +226,15 @@ export default function FlavorsPage() {
                   calories: f.nutritionalInfo.calories,
                   fatContent: f.nutritionalInfo.totalFat,
                   sodiumContent: f.nutritionalInfo.sodium,
+                },
+
+                offers: {
+                  "@type": "Offer",
+                  url: `${SITE_URL}/flavors#flavor-${f.id}`,
+                  priceCurrency: "INR",
+                  price: "10",
+                  availability: "https://schema.org/InStock",
+                  itemCondition: "https://schema.org/NewCondition",
                 },
               },
             })),
