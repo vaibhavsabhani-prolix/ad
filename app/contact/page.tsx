@@ -35,8 +35,9 @@ const Paragraph = ({ children }: { children: React.ReactNode }) => (
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen p-6 max-w-4xl mx-auto">
-      <h1 className="text-2xl font-bold mb-4">Contact Us</h1>
+    <div className="min-h-screen bg-zinc-50 px-4 py-10 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
+      <article className="mx-auto max-w-4xl rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900 sm:p-8">
+      <h1 className="text-4xl font-bold tracking-tight">Contact Us</h1>
 
       <script
         type="application/ld+json"
@@ -81,16 +82,38 @@ export default function ContactPage() {
         }}
       />
 
-      <div className="mb-6">
+      <div className="mb-6 mt-6">
         <GoogleAd adSlot="9716108451" />
       </div>
 
       <Paragraph>
-        Thank you for your interest in Visha Chips. We welcome support requests,
-        wholesale inquiries, feedback, and media questions. For the fastest
-        response, email the appropriate channel below and include any relevant
-        details.
+        Thank you for your interest in Visha Chips. We welcome support requests, wholesale inquiries, feedback, and media questions. The fastest path to a useful response is to send the right type of inquiry to the right channel and include enough detail for the team to answer without follow-up.
       </Paragraph>
+
+      <h2 className="text-2xl font-semibold mt-8">Contact Form</h2>
+      <form className="mt-4 grid gap-4 rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <label className="grid gap-2 text-sm">
+            Name
+            <input className="rounded-lg border border-zinc-300 bg-white px-3 py-2 text-zinc-900 dark:border-zinc-700 dark:bg-zinc-950 dark:text-zinc-100" type="text" name="name" />
+          </label>
+          <label className="grid gap-2 text-sm">
+            Email
+            <input className="rounded-lg border border-zinc-300 bg-white px-3 py-2 text-zinc-900 dark:border-zinc-700 dark:bg-zinc-950 dark:text-zinc-100" type="email" name="email" />
+          </label>
+        </div>
+        <label className="grid gap-2 text-sm">
+          Subject
+          <input className="rounded-lg border border-zinc-300 bg-white px-3 py-2 text-zinc-900 dark:border-zinc-700 dark:bg-zinc-950 dark:text-zinc-100" type="text" name="subject" />
+        </label>
+        <label className="grid gap-2 text-sm">
+          Message
+          <textarea className="min-h-36 rounded-lg border border-zinc-300 bg-white px-3 py-2 text-zinc-900 dark:border-zinc-700 dark:bg-zinc-950 dark:text-zinc-100" name="message" />
+        </label>
+        <button className="w-fit rounded-full bg-orange-600 px-5 py-2 text-sm font-semibold text-white" type="submit">
+          Send Inquiry
+        </button>
+      </form>
 
       <h2 className="text-lg font-semibold mt-4">Support</h2>
       <Paragraph>
@@ -108,9 +131,14 @@ export default function ContactPage() {
 
       <h2 className="text-lg font-semibold mt-4">General Contact</h2>
       <Paragraph>
-        For press or media inquiries, contact media@codexd.in. If you're
+        For press or media inquiries, contact media@codexd.in. If you&apos;re
         unsure which channel to use, email hello@codexd.in and we will
         route your request appropriately.
+      </Paragraph>
+
+      <h2 className="text-lg font-semibold mt-4">FAQ</h2>
+      <Paragraph>
+        Retailers should include store name, location, expected order volume, and any preferred pack sizes. Customers asking about ingredients or storage should mention the flavor name and package size. If your question is about editorial content, include the article title so the team can respond accurately.
       </Paragraph>
 
       <Paragraph>
@@ -130,6 +158,7 @@ export default function ContactPage() {
           height={90}
         />
       </div>
+      </article>
     </div>
   );
 }

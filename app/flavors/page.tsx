@@ -311,7 +311,7 @@ export default function FlavorsPage() {
 
         {/* Header Hero Section */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-yellow-500 via-orange-500 to-red-600 bg-clip-text text-transparent mb-4">
+          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight bg-linear-to-r from-yellow-500 via-orange-500 to-red-600 bg-clip-text text-transparent mb-4">
             Visha Chips Signature Flavors
           </h1>
           <p className="text-lg text-zinc-600 dark:text-zinc-300">
@@ -327,10 +327,10 @@ export default function FlavorsPage() {
             <div
               key={flavor.id}
               id={`flavor-${flavor.id}`}
-              className={`flex flex-col md:flex-row bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 bg-gradient-to-br ${flavor.cardColor}`}
+              className={`flex flex-col md:flex-row bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 bg-linear-to-br ${flavor.cardColor}`}
             >
               {/* Product Image Section */}
-              <div className="relative w-full md:w-1/2 h-64 md:h-auto min-h-[260px] overflow-hidden shrink-0">
+              <div className="relative w-full md:w-1/2 h-64 md:h-auto min-h-65 overflow-hidden shrink-0">
                 <Image
                   src={flavor.image}
                   alt={`Visha Chips - ${flavor.name}`}
@@ -427,18 +427,47 @@ export default function FlavorsPage() {
           ))}
         </div>
 
+        <section className="mb-16 rounded-3xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900">
+          <h2 className="text-2xl font-bold mb-4">Flavor Descriptions</h2>
+          {FLAVORS.map((flavor) => (
+            <div key={`desc-${flavor.id}`} className="mb-6 last:mb-0">
+              <h3 className="text-lg font-semibold">{flavor.name}</h3>
+              <p className="mt-2 text-zinc-700 dark:text-zinc-300 leading-8">
+                {flavor.description} The flavor is designed to feel distinct without losing the natural chip base, which is why it stays balanced enough for repeat snacking instead of only working as a novelty.
+              </p>
+            </div>
+          ))}
+        </section>
+
+        <section className="mb-16 rounded-3xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900">
+          <h2 className="text-2xl font-bold mb-4">Pairing Suggestions</h2>
+          <p className="text-zinc-700 dark:text-zinc-300 leading-8">
+            Salted works well with dips and soft drinks, masala pairs naturally with tea-time snacks and savory spreads, tangy tomato fits casual gatherings and lunch-box use, and spicy chili works best when you want a bolder standalone snack. If you need a quick match, use the flavor intensity to decide whether the chip should complement the rest of the meal or stand on its own.
+          </p>
+          <p className="mt-4 text-zinc-700 dark:text-zinc-300 leading-8">
+            For broader comparisons, the blog includes a dedicated <Link href="/blog/salted-vs-masala-chips" className="text-sky-600">salted vs masala chips</Link> article and a wider <Link href="/blog/best-potato-chip-flavors" className="text-sky-600">best potato chip flavors</Link> guide.
+          </p>
+        </section>
+
+        <section className="mb-16 rounded-3xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900">
+          <h2 className="text-2xl font-bold mb-4">Best Occasions</h2>
+          <p className="text-zinc-700 dark:text-zinc-300 leading-8">
+            Choose salted for everyday snacking, masala for family gatherings, tangy tomato for mixed-age crowds, and spicy chili for buyers who enjoy heat. Pack size also matters: smaller packs are useful for portability while larger packs are better for sharing and retail display.
+          </p>
+        </section>
+
         {/* Mid-Page Google Ad Banner */}
         <div className="my-14 flex justify-center w-full">
           <GoogleAd adSlot="9716108451" />
         </div>
 
         {/* Pairing/Experience Guide Section (Extra Premium Details) */}
-        <section className="bg-gradient-to-br from-zinc-900 to-zinc-950 text-white rounded-3xl p-8 sm:p-12 mb-16 border border-zinc-800 shadow-xl relative overflow-hidden">
+        <section className="bg-linear-to-br from-zinc-900 to-zinc-950 text-white rounded-3xl p-8 sm:p-12 mb-16 border border-zinc-800 shadow-xl relative overflow-hidden">
           <div className="absolute top-0 right-0 w-80 h-80 bg-orange-600/10 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-yellow-500/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="relative max-w-3xl">
-            <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+            <h2 className="text-3xl font-bold mb-4 bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
               Visha Chips Pairing Guide
             </h2>
             <p className="text-zinc-300 mb-8 leading-relaxed">

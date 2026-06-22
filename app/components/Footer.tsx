@@ -17,6 +17,9 @@ export default function Footer() {
         <div>
           <h4 className="font-semibold">Product</h4>
           <nav className="mt-2 flex flex-col gap-1">
+            <Link href="/blog" className="text-sm text-zinc-700 dark:text-zinc-300">
+              Blog
+            </Link>
             <Link
               href="/retail-distribution"
               className="text-sm text-zinc-700 dark:text-zinc-300"
@@ -59,6 +62,8 @@ export default function Footer() {
             >
               support@codexd.in
             </a>
+            <Link href="/privacy" className="text-sm text-zinc-700 dark:text-zinc-300">Privacy</Link>
+            <Link href="/terms" className="text-sm text-zinc-700 dark:text-zinc-300">Terms</Link>
           </nav>
         </div>
       </div>

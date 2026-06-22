@@ -200,7 +200,13 @@ export default function ProductsPage() {
 
         {/* Header Hero Title */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-yellow-500 via-orange-500 to-red-600 bg-clip-text text-transparent mb-4">
+          <h1
+            className="text-4xl sm:text-5xl font-extrabold tracking-tight bg-clip-text text-transparent mb-4"
+            style={{
+              backgroundImage:
+                "linear-gradient(90deg, #eab308, #f97316, #dc2626)",
+            }}
+          >
             Visha Chips Product Range
           </h1>
           <p className="text-lg text-zinc-600 dark:text-zinc-300">
@@ -211,7 +217,10 @@ export default function ProductsPage() {
         </div>
 
         {/* Hero Lineup Image Showcasing packaging */}
-        <div className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] rounded-3xl overflow-hidden shadow-lg border border-zinc-200 dark:border-zinc-800 mb-16">
+        <div
+          className="relative w-full rounded-3xl overflow-hidden shadow-lg border border-zinc-200 dark:border-zinc-800 mb-16"
+          style={{ height: "clamp(300px, 35vw, 500px)" }}
+        >
           <Image
             src="/products/lineup.png"
             alt="Visha Chips packaging lineup"
@@ -220,7 +229,13 @@ export default function ProductsPage() {
             priority
           />
           {/* Glass Overlay text */}
-          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-6 sm:p-10 flex flex-col justify-end text-white">
+          <div
+            className="absolute inset-x-0 bottom-0 p-6 sm:p-10 flex flex-col justify-end text-white"
+            style={{
+              backgroundImage:
+                "linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.4), transparent)",
+            }}
+          >
             <span className="text-xs uppercase tracking-widest font-bold text-orange-400 mb-2">
               Premium Freshness Guarantee
             </span>
@@ -239,7 +254,7 @@ export default function ProductsPage() {
           {PRODUCT_SIZES.map((prod) => (
             <div
               key={prod.id}
-              className={`flex flex-col justify-between bg-white dark:bg-zinc-900 border rounded-3xl p-6 sm:p-8 shadow-sm hover:shadow-md transition-all duration-300 bg-gradient-to-br ${prod.cardColor}`}
+              className={`flex flex-col justify-between bg-white dark:bg-zinc-900 border rounded-3xl p-6 sm:p-8 shadow-sm hover:shadow-md transition-all duration-300 ${prod.cardColor}`}
             >
               <div>
                 <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
@@ -284,13 +299,68 @@ export default function ProductsPage() {
           ))}
         </div>
 
+        <section className="mb-16 rounded-3xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900">
+          <h2 className="text-2xl font-bold mb-4">Ingredient Information</h2>
+          <p className="text-zinc-700 dark:text-zinc-300 leading-8">
+            Our chip range is built around a concise ingredient story: potatoes, oil, and seasoning. That simplicity makes the product easier to understand, easier to compare, and easier to explain to customers who want a snack without a long, confusing label. The exact seasoning profile varies by flavor, but the overall product philosophy stays the same.
+          </p>
+          <p className="mt-4 text-zinc-700 dark:text-zinc-300 leading-8">
+            This matters for retail buyers because ingredients influence customer trust. A shopper who can quickly understand what a snack contains is more likely to make a repeat purchase, and a retailer who can answer basic product questions with confidence is more likely to recommend the item again.
+          </p>
+        </section>
+
+        <section className="mb-16 rounded-3xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900">
+          <h2 className="text-2xl font-bold mb-4">Flavor Comparison</h2>
+          <div className="grid gap-4 md:grid-cols-2">
+            <div>
+              <h3 className="font-semibold">Salted</h3>
+              <p className="text-zinc-700 dark:text-zinc-300 leading-7">Clean, classic, and easy to pair with almost any meal or snack spread.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold">Masala</h3>
+              <p className="text-zinc-700 dark:text-zinc-300 leading-7">Spice-forward and aromatic, with a stronger finish for people who like more character.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold">Tangy Tomato</h3>
+              <p className="text-zinc-700 dark:text-zinc-300 leading-7">Sweet, sour, and lively, useful when you want a brighter flavor on the shelf.</p>
+            </div>
+            <div>
+              <h3 className="font-semibold">Spicy Chili</h3>
+              <p className="text-zinc-700 dark:text-zinc-300 leading-7">The boldest option in the current range, built for customers who want heat and intensity.</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="mb-16 rounded-3xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900">
+          <h2 className="text-2xl font-bold mb-4">Nutrition Information</h2>
+          <p className="text-zinc-700 dark:text-zinc-300 leading-8">
+            The nutrition profile varies by flavor and pack size, which is why we encourage customers to read the label before buying. Chips are best understood as an enjoyable snack rather than a main meal, so portion size matters. If you are comparing products for home use, party service, or resale, the pack format and serving amount should be part of the decision.
+          </p>
+          <p className="mt-4 text-zinc-700 dark:text-zinc-300 leading-8">
+            For people who want clearer guidance, the blog contains articles on <Link href="/blog/potato-nutrition-facts" className="text-sky-600">potato nutrition facts</Link> and <Link href="/blog/healthy-snacking-tips" className="text-sky-600">healthy snacking tips</Link>.
+          </p>
+        </section>
+
+        <section className="mb-16 rounded-3xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-900">
+          <h2 className="text-2xl font-bold mb-4">Storage Recommendations</h2>
+          <p className="text-zinc-700 dark:text-zinc-300 leading-8">
+            Keep unopened packs in a cool, dry place away from direct heat and sunlight. Once opened, reseal the bag or move the chips into an airtight container to keep the texture crisp for as long as possible. Freshness is a big part of the chip experience, so storage matters as much as flavor choice.
+          </p>
+        </section>
+
         {/* Middle Ad */}
         <div className="my-10 flex justify-center w-full">
           <GoogleAd adSlot="9716108451" />
         </div>
 
         {/* CTA Section connecting to Flavors */}
-        <section className="bg-gradient-to-br from-yellow-500/10 via-orange-500/10 to-red-500/10 rounded-3xl p-8 sm:p-12 text-center border border-orange-200/40 dark:border-orange-900/20 shadow-sm mb-16">
+        <section
+          className="rounded-3xl p-8 sm:p-12 text-center border border-orange-200/40 dark:border-orange-900/20 shadow-sm mb-16"
+          style={{
+            backgroundImage:
+              "linear-gradient(135deg, rgba(234,179,8,0.10), rgba(249,115,22,0.10), rgba(239,68,68,0.10))",
+          }}
+        >
           <h2 className="text-3xl font-extrabold text-zinc-950 dark:text-zinc-50 mb-3">
             Available in Four Mind-Blowing Flavors
           </h2>

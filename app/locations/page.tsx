@@ -33,36 +33,36 @@ export default function GBPPage() {
       description: "Search retailers and stockists that carry Visha Chips.",
     },
     {
-      title: "Online Ordering",
+      title: "Retail Availability",
       description:
-        "Links to partner retailers and online shops where available.",
+        "See which locations and channels currently stock the product.",
     },
     {
       title: "Wholesale Enquiries",
       description: "Contact our sales team for bulk orders and distribution.",
     },
     {
-      title: "Store Support",
-      description: "Listing and merchandising help for retail partners.",
+      title: "Partner Opportunities",
+      description: "Listing, merchandising, and stocking support for retail partners.",
     },
   ];
 
   const workflow = [
     {
-      title: "Connect Google Account",
-      subtitle: "User authenticates via OAuth and grants access",
+      title: "Check Coverage",
+      subtitle: "Review the region or channel before placing an order",
     },
     {
-      title: "Select Business Location",
-      subtitle: "Pick locations to import or sync",
+      title: "Match Pack Size",
+      subtitle: "Choose the pack format that fits your shelf or household",
     },
     {
-      title: "Manage Profile",
-      subtitle: "Edit details and push updates to Google",
+      title: "Coordinate Supply",
+      subtitle: "Plan delivery timing and reorder frequency",
     },
     {
-      title: "Sync Changes",
-      subtitle: "Confirm changes and review sync status",
+      title: "Keep Shelves Fresh",
+      subtitle: "Maintain stock rotation so the product stays current",
     },
   ];
 
@@ -107,6 +107,30 @@ export default function GBPPage() {
         </section>
 
         <section className="mb-6">
+          <h2 className="text-xl font-semibold mb-3">Distribution Information</h2>
+          <p className="text-zinc-700 dark:text-zinc-300 leading-8 mb-3">
+            Visha Chips is distributed through a combination of local retail partners, convenience stores, and direct wholesale inquiries. Availability varies by region, so the best way to confirm a specific location is to contact the team with your city, neighborhood, or store details.
+          </p>
+          <p className="text-zinc-700 dark:text-zinc-300 leading-8">
+            For businesses, this page is where distribution questions begin. For households, it is the easiest place to understand whether the product is already stocked nearby or whether a retailer request is needed.
+          </p>
+        </section>
+
+        <section className="mb-6">
+          <h2 className="text-xl font-semibold mb-3">Wholesale Inquiries</h2>
+          <p className="text-zinc-700 dark:text-zinc-300 leading-8">
+            Wholesale buyers should include estimated order size, pack preference, and delivery region so the sales team can respond accurately. This is especially helpful for supermarkets, convenience chains, event organizers, and other buyers who need repeat supply.
+          </p>
+        </section>
+
+        <section className="mb-6">
+          <h2 className="text-xl font-semibold mb-3">Delivery Coverage</h2>
+          <p className="text-zinc-700 dark:text-zinc-300 leading-8">
+            Delivery coverage depends on partner routes and inventory planning. If your location is not yet in active rotation, the team can still discuss stocking requests, seasonal supply, or one-time bulk purchase options.
+          </p>
+        </section>
+
+        <section className="mb-6">
           <h2 className="text-xl font-semibold mb-3">Workflow</h2>
           <Workflow steps={workflow} />
         </section>
@@ -146,9 +170,12 @@ export default function GBPPage() {
           />
         </section>
 
-        <div className="mb-12">
+        <div className="mb-12 flex flex-wrap gap-4">
           <Link href="/contact" className="text-sky-600">
             Contact Sales →
+          </Link>
+          <Link href="/blog/retail-snack-distribution" className="text-sky-600">
+            Read distribution guide →
           </Link>
         </div>
         <script

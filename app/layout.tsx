@@ -109,11 +109,13 @@ export const viewport: Viewport = {
 };
 
 const navLinks = [
+  { href: "/blog", label: "Blog" },
   { href: "/products", label: "Products" },
   { href: "/flavors", label: "Flavors" },
   { href: "/locations", label: "Locations" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
+  { href: "/disclaimer", label: "Disclaimer" },
   { href: "/privacy", label: "Privacy" },
   { href: "/terms", label: "Terms" },
 ];

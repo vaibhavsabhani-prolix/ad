@@ -22,108 +22,108 @@ export default function AdsterraAd(props: AdsterraAdProps) {
   const ref = useRef<HTMLDivElement>(null);
   const loaded = useRef(false);
 
-  useEffect(() => {
-    if (loaded.current) return;
+  // useEffect(() => {
+  //   if (loaded.current) return;
 
-    if (props.type === "smartlink") return;
+  //   if (props.type === "smartlink") return;
 
-    if (
-      props.type === "socialBar" ||
-      props.type === "popunder"
-    ) {
-      if (!props.scriptUrl) return;
+  //   if (
+  //     props.type === "socialBar" ||
+  //     props.type === "popunder"
+  //   ) {
+  //     if (!props.scriptUrl) return;
 
-      const script = document.createElement("script");
+  //     const script = document.createElement("script");
 
-      script.src = props.scriptUrl;
-      script.async = true;
-      script.setAttribute("data-cfasync", "false");
+  //     script.src = props.scriptUrl;
+  //     script.async = true;
+  //     script.setAttribute("data-cfasync", "false");
 
-      document.body.appendChild(script);
+  //     document.body.appendChild(script);
 
-      loaded.current = true;
+  //     loaded.current = true;
 
-      return () => {
-        script.remove();
-      };
-    }
+  //     return () => {
+  //       script.remove();
+  //     };
+  //   }
 
-    if (props.type === "native") {
-      if (!props.invokeUrl) return;
+  //   if (props.type === "native") {
+  //     if (!props.invokeUrl) return;
 
-      const script = document.createElement("script");
+  //     const script = document.createElement("script");
 
-      script.src = props.invokeUrl;
-      script.async = true;
-      script.setAttribute("data-cfasync", "false");
+  //     script.src = props.invokeUrl;
+  //     script.async = true;
+  //     script.setAttribute("data-cfasync", "false");
 
-      document.body.appendChild(script);
+  //     document.body.appendChild(script);
 
-      loaded.current = true;
+  //     loaded.current = true;
 
-      return () => {
-        script.remove();
-      };
-    }
+  //     return () => {
+  //       script.remove();
+  //     };
+  //   }
 
-    if (props.type === "banner") {
-      if (
-        !ref.current ||
-        !props.adKey ||
-        !props.width ||
-        !props.height
-      ) {
-        return;
-      }
+  //   if (props.type === "banner") {
+  //     if (
+  //       !ref.current ||
+  //       !props.adKey ||
+  //       !props.width ||
+  //       !props.height
+  //     ) {
+  //       return;
+  //     }
 
-      const optionsScript = document.createElement("script");
+  //     const optionsScript = document.createElement("script");
 
-      optionsScript.innerHTML = `
-        atOptions = {
-          'key' : '${props.adKey}',
-          'format' : 'iframe',
-          'height' : ${props.height},
-          'width' : ${props.width},
-          'params' : {}
-        };
-      `;
+  //     optionsScript.innerHTML = `
+  //       atOptions = {
+  //         'key' : '${props.adKey}',
+  //         'format' : 'iframe',
+  //         'height' : ${props.height},
+  //         'width' : ${props.width},
+  //         'params' : {}
+  //       };
+  //     `;
 
-      const invokeScript = document.createElement("script");
+  //     const invokeScript = document.createElement("script");
 
-      invokeScript.src = `https://www.highperformanceformat.com/${props.adKey}/invoke.js`;
-      invokeScript.async = true;
-      invokeScript.setAttribute("data-cfasync", "false");
+  //     invokeScript.src = `https://www.highperformanceformat.com/${props.adKey}/invoke.js`;
+  //     invokeScript.async = true;
+  //     invokeScript.setAttribute("data-cfasync", "false");
 
-      ref.current.appendChild(optionsScript);
-      ref.current.appendChild(invokeScript);
+  //     ref.current.appendChild(optionsScript);
+  //     ref.current.appendChild(invokeScript);
 
-      loaded.current = true;
+  //     loaded.current = true;
 
-      return () => {
-        ref.current?.replaceChildren();
-      };
-    }
-  }, []);
+  //     return () => {
+  //       ref.current?.replaceChildren();
+  //     };
+  //   }
+  // }, []);
 
-  if (props.type === "smartlink") {
-    return (
-      <a
-        href={props.smartLink}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {props.children}
-      </a>
-    );
-  }
+  // if (props.type === "smartlink") {
+  //   return (
+  //     <a
+  //       href={props.smartLink}
+  //       target="_blank"
+  //       rel="noopener noreferrer"
+  //     >
+  //       {props.children}
+  //     </a>
+  //   );
+  // }
 
-  if (props.type === "native") {
-    return <div id={props.containerId} />;
-  }
+  // if (props.type === "native") {
+  //   return <div id={props.containerId} />;
+  // }
 
-  if (props.type === "banner") {
-    return <div ref={ref} />;
-  }
+  // if (props.type === "banner") {
+  //   return <div ref={ref} />;
+  // }
 
   return null;
 }
